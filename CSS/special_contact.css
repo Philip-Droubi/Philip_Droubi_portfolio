@@ -1,0 +1,24 @@
+.contact-spec {
+    position: fixed;
+    bottom: 15vh;
+    right: -137px;
+    text-align: center;
+    line-height: 1.4;
+    background: #80deeabb;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 5px 5px 6px 0 #00000063;
+    padding: 8px 5px 8px 10px;
+    transition: 0.5s;
+    /* z-index: 100; */
+    backdrop-filter: blur(3px);
+}
+
+.contact-spec a {
+    color: #263238;
+}
+
+.contact-spec:hover {
+    padding-left: 16px !important;
+    transition: 0.3s !important;
+}
