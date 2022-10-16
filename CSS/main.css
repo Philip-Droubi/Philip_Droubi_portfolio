@@ -8,6 +8,10 @@
     --nice-cyan: #29a5ed;
     --whitesmoke: rgba(245, 245, 245, 0.808);
     --main-padding-top: 60px;
+    --orangered: rgb(255, 69, 0);
+    --orange: orange;
+    --semi-light-blue: #17255A;
+    --dark-blue: #000C66;
     --margin: 80px;
 }
 
@@ -92,11 +96,22 @@ html {
     display: none;
 }
 
+.relative {
+    position: relative;
+}
+
 body {
     font-family: "Rubik", sans-serif;
     font-size: var(--font-size);
-    /* background-image: url(../Images/favicon/icons8-p-cute-clipart-32.png); */
     background-color: var(--body-background-color);
     min-height: 500vh;
     padding-top: 60px;
+}
+
+.section {
+    padding: var(--main-padding-top) 0;
+}
+
+.dis-inline-block {
+    display: inline-block;
 }
