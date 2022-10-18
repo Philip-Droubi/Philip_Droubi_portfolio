@@ -4,8 +4,7 @@
     position: fixed;
     bottom: 20px;
     right: -40px;
-    background-color: #cee8f7;
-    color: #263238;
+    background-color: #001f75cc;
     padding: 10px;
     border-radius: 6px;
     border: 2px solid var(--nice-cyan);
@@ -17,10 +16,11 @@
 
 #top i {
     transition: 0.2s;
+    color: var(--nice-cyan);
 }
 
 #top:hover {
-    background-color: #bee0f4;
+    background-color: #2f41749d;
 }
 
 #top:hover i {
