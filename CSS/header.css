@@ -62,7 +62,7 @@ nav .list {
     justify-content: flex-end;
 }
 
-nav .list li:not(:nth-child(4)) {
+nav .list li:not(:nth-child(5)) {
     margin-right: 20px;
 }
 
@@ -153,7 +153,7 @@ nav li a:hover::after {
     transform: calc(translateX(50%) - 55px);
 }
 
-.nav_menu li:not(:nth-child(4)) {
+.nav_menu li:not(:nth-child(5)) {
     margin-bottom: 10px;
 }
 

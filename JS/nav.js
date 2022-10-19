@@ -41,8 +41,9 @@ function nav_List() {
         `
             <li><a href="#About">About</a></li>
             <li><a href="#Skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#Projects">Projects</a></li>
             <li><a href="#Contact">Contact</a></li>
+            <li><a href="#Subscribe">Subscribe</a></li>
         `;
     berg_icon.classList.add('hidden');
     if (nav_menu = document.querySelector(".nav_menu")) {
@@ -74,8 +75,9 @@ function click_On_Berger() {
             <ul>
                 <li><a href="#About">About</a></li>
                 <li><a href="#Skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#Contact">Contact</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Contact">Contact</a></li> 
+                <li><a href="#Subscribe">Subscribe</a></li>
             </ul>
             <p>&copy; 2022</p>
         `

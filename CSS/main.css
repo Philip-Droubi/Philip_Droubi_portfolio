@@ -80,14 +80,14 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #90caf9;
+    background-color: #ffffff98;
     border-radius: 4px;
     box-shadow: inset 2px 0 2px 0 rgba(0, 0, 0, 0.233),
         inset -2px 0 2px 0 rgba(0, 0, 0, 0.233);
 }
 
 ::-webkit-scrollbar-track {
-    background-image: linear-gradient(180deg, var(--nice-cyan), rgb(151, 9, 170));
+    background-image: linear-gradient(180deg, var(--nice-cyan), rgb(136, 0, 118));
     /* background-image: linear-gradient(180deg, rgb(172, 172, 252), rgb(151, 9, 170)); */
     box-shadow: inset 1px 0 2px 0 rgba(0, 0, 0, 0.233),
         inset -1px 0 2px 0 rgba(0, 0, 0, 0.233);
@@ -105,7 +105,7 @@ body {
     font-family: "Rubik", sans-serif;
     font-size: var(--font-size);
     background-color: var(--body-background-color);
-    min-height: 500vh;
+    min-height: 100vh;
     padding-top: 60px;
 }
 
