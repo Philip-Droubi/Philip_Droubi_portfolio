@@ -59,9 +59,15 @@ skills.forEach(function (el) {
 });
 
 // L&E
+
 var LE = document.querySelector('.LEinner');
 var lt821 = false;  //window width less than 821px
+LEresize();
 window.onresize = () => {
+    LEresize();
+};
+
+function LEresize() {
     if (window.innerWidth <= 820 && lt821 == false) {
         lt821 = true;
         LE.classList.add('container');
