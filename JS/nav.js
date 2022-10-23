@@ -56,16 +56,20 @@ function nav_List() {
 
 
 berg_icon.onclick = function () {
-    berg_clicked == false ? berg_clicked = true : berg_clicked = false;
-    if (berg_clicked == true) {
-        click_On_Berger();
+
+    if (berg_clicked == false) {
+        open_Berger();
     }
-    else if (berg_clicked == false) {
+    else if (berg_clicked == true) {
         close_Berger();
     }
+    berg_clicked == false ? berg_clicked = true : berg_clicked = false;
 }
 
-function click_On_Berger() {
+function open_Berger() {
+    if (document.querySelectorAll('.nav_menu').length > 0) {
+        force_Close_Berger(document.querySelectorAll('.nav_menu').length);
+    }
     let nav_menu = document.createElement('div');
     nav_menu.innerHTML =
         `
@@ -96,6 +100,16 @@ function close_Berger() {
         nav_menu.remove();
     }, 400);
     berg_icon.classList.remove('close-berg');
+}
+
+function force_Close_Berger(num) {
+    for (let i = 0; i < num; i++) {
+        let nav_menu = document.querySelector('.nav_menu');
+        nav_menu.remove();
+        berg_icon.classList.remove('close-berg');
+    }
+    //On fast click when menu is open nav_menu open several time which cose a bug 
+    //So that this function is required
 }
 
 document.addEventListener('click', event => {
