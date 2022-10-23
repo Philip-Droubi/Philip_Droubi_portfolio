@@ -56,5 +56,18 @@ skills.forEach(function (el) {
         p.appendChild(span)
     }
     skills_list.appendChild(li);
-})
+});
 
+// L&E
+var LE = document.querySelector('.LEinner');
+var lt821 = false;  //window width less than 821px
+window.onresize = () => {
+    if (window.innerWidth <= 820 && lt821 == false) {
+        lt821 = true;
+        LE.classList.add('container');
+    }
+    else if (window.innerWidth > 820 && lt821 == true) {
+        lt821 = false;
+        LE.classList.remove('container');
+    }
+};

@@ -109,7 +109,7 @@ main {
     content: '';
     position: absolute;
     width: 200px;
-    height: 670px;
+    height: 690px;
     top: -450px;
     left: -240px;
     background-color: rgba(212, 245, 255, 0.164);
@@ -151,12 +151,6 @@ main {
     left: 260px;
 }
 
-@media (hover :hover) {
-    .About .personal-info .identity:hover {
-        transform: scale(1.1);
-    }
-}
-
 .Skills {
     background-color: var(--navBar-color);
     background-color: #000C66;
@@ -180,8 +174,8 @@ main {
     margin: 20px 30px;
     padding: 10px 20px;
     text-align: center;
-    background-color: rgb(58, 55, 75);
-    color: var(--nice-cyan);
+    background-color: #1D1939;
+    color: var(--blue-color-hover);
     transition: 0.2s;
     font-weight: bold;
     position: relative;
@@ -226,16 +220,64 @@ main {
 
 .LE {
     background-color: var(--dark-blue);
+    color: var(--nice-cyan);
+    position: relative;
+}
+
+.LEinner {
+    padding: 0 20px;
+    z-index: 100;
+}
+
+.LEinner h2 {
+    font-style: italic;
+    text-transform: uppercase;
+    /* -webkit-text-stroke-color: var(--nice-cyan);
+    -webkit-text-stroke-width: 0.3px; */
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, var(--blue-color-hover), 40%, rgb(186, 109, 196));
+    width: fit-content;
+    padding-right: 10px;
+}
+
+.LEinner .text {
+    margin: 10px 0;
+}
+
+.LEinner .text:nth-child(4) p:nth-child(1) {
+    margin-bottom: 8px;
+}
+
+.LEinner .text:nth-child(4) span {
+    font-size: large;
+    font-weight: bold;
+    /* -webkit-text-stroke-width: 0.5px; */
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(0deg, var(--blue-color-hover), #cfd8dc);
+    width: fit-content;
 }
 
 .Projects {
     background-color: var(--semi-light-blue);
 }
 
+.Contact {
+    background-color: var(--dark-blue);
+}
+
 .Subscribe {
     background-color: rgb(39, 35, 35);
     background-image: url(../Images/Others/sub.jpg);
     background-size: cover;
+}
+
+.Subscribe .title {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(-4deg, var(--blue-color-hover), 35%, rgb(214, 243, 253));
+    width: fit-content;
 }
 
 .Subscribe::after {
@@ -246,7 +288,7 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.301);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px) brightness(0.8);
 }
 
 .Subscribe .container {
@@ -393,8 +435,13 @@ main {
         grid-column: 1 /3;
     }
 
+    .Contact,
     .Skills {
         background-color: var(--semi-light-blue);
+    }
+
+    .Projects {
+        background-color: var(--dark-blue);
     }
 
     .Skills li {
@@ -406,7 +453,7 @@ main {
     }
 
     .Subscribe {
-        background-position: left;
+        background-position: right;
     }
 
     .Subscribe .sub-body {
@@ -442,5 +489,47 @@ main {
 @media (max-width:425px) {
     .About .container .identity p {
         display: block;
+    }
+
+    .Subscribe form .submit {
+        width: 100%;
+        border-top: none;
+        border-left: 1px solid white;
+    }
+
+    .Subscribe form .submit:hover {
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+
+    .Subscribe form input[type="email"] {
+        border-right: 1px solid white;
+        width: 100%;
+        max-width: 100% !important;
+    }
+
+    .Subscribe form i {
+        top: 29%;
+    }
+
+    .Subscribe form {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:340px) {
+    .title {
+        font-size: 35px;
+    }
+
+    .title::after {
+        font-size: 60px;
+    }
+}
+
+@media (hover :hover) {
+    .About .personal-info .identity:hover {
+        transform: scale(1.1);
     }
 }
