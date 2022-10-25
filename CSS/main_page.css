@@ -102,7 +102,9 @@ main {
 
 .About .personal-info .identity span {
     font-weight: bold;
-    color: rgb(149, 183, 214);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(0deg, rgb(83, 160, 204), #e1e8eb);
 }
 
 .About .personal-info .identity::after {
@@ -246,6 +248,7 @@ main {
 
 .LEinner .text {
     margin: 10px 0;
+    font-size: 18px;
 }
 
 .LEinner .text:nth-child(4) p:nth-child(1) {
@@ -255,7 +258,6 @@ main {
 .LEinner .text:nth-child(4) span {
     font-size: large;
     font-weight: bold;
-    /* -webkit-text-stroke-width: 0.5px; */
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-image: linear-gradient(0deg, var(--blue-color-hover), #cfd8dc);
@@ -467,6 +469,7 @@ main {
     .Subscribe .sub-body p {
         margin-bottom: 40px;
     }
+
 }
 
 @media (max-width:470px) {
@@ -534,5 +537,11 @@ main {
 @media (hover :hover) {
     .About .personal-info .identity:hover {
         transform: scale(1.1);
+    }
+}
+
+@media (min-width:821px) {
+    .LEinner {
+        padding: 0 40px;
     }
 }
