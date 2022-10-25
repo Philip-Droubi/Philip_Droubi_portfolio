@@ -57,6 +57,7 @@ skills.forEach(function (el) {
     }
     skills_list.appendChild(li);
 });
+// End Skills
 
 // L&E
 
@@ -77,3 +78,9 @@ function LEresize() {
         LE.classList.remove('container');
     }
 };
+
+// End L&E
+
+window.onload = () => {
+
+}
