@@ -355,7 +355,7 @@ main {
 }
 
 .Subscribe form .submit {
-    width: 130px;
+    min-width: 130px;
     color: white;
     padding: 10px 20px;
     border: 1px solid white;
@@ -364,7 +364,12 @@ main {
     background-color: var(--nice-cyan);
     cursor: pointer;
     transition: 0.2s;
+    min-height: 51px;
 }
+
+/* .Subscribe form .submit div {
+    min-width: 87.7px;
+} */
 
 .Subscribe form .submit:hover {
     background-color: var(--blue-color-hover);

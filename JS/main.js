@@ -1,10 +1,11 @@
 // CRETEAD BY PHILIP DROUBI
 const k = 'o8teoSL8FW1evoKylF9polLStF5SXB9MMsTcbUark16IKEUSMHQBpfuGfoQmaWHN';
 const url = 'http://127.0.0.1:8000/api';
-async function newVisite() {
+
+async function newVisit() {
     try {
         const req = await fetch(`${url}/visit`, {
-            Method: 'GET',
+            method: 'GET',
             headers: {
                 'Accept': 'application/json',
                 'X-Api-Key': k
@@ -12,9 +13,10 @@ async function newVisite() {
         });
         return req.json();
     } catch (e) {
-        // console.error(e);
+        console.error(e);
     }
 }
+
 
 /* Special Contact */
 let contact_spec_func = setTimeout(function () {
@@ -97,4 +99,84 @@ function LEresize() {
 
 // End L&E
 
-// subscribe
+// Subscribe
+let subsub = document.querySelector(".sub .submit");
+let subclicked = false;
+subsub.addEventListener("click", async (e) => {
+    try {
+        e.preventDefault();
+        if (validateEmail(document.querySelector(".sub .email"))) {
+            if (!subclicked) {
+                subclicked = true;
+                subsub.firstElementChild.innerHTML = "";
+                subsub.firstElementChild.classList.add('loading');
+                newSub()
+                    .then((data) => hundleSub(data))
+                    .then(() => {
+                        subclicked = false;
+                        subsub.firstElementChild.innerHTML = "subscribe";
+                        subsub.firstElementChild.classList.remove('loading');
+                    })
+            }
+        }
+    } catch (e) {
+        // console.error(e);
+    }
+});
+
+async function newSub() {
+    var formData = new FormData(document.querySelector(".sub"));
+    const req = await fetch(`${url}/Subscribe`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'X-Api-Key': k
+        },
+        body: formData
+    });
+    return req.json();
+}
+
+function validateEmail(emailField) {
+    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if (reg.test(emailField.value) == false) {
+        createNotification('error', 'Invalid Email !');
+        return false;
+    }
+    return true;
+}
+
+function hundleSub(data) {
+    if (data.status == 201 || data.status == 200) {
+        createNotification('correct', `${data.message}`);
+    } else {
+        createNotification('error', `${data.message}`);
+    }
+}
+
+function createNotification(nClass, parg) {
+    if (!document.querySelector("notifi-box")) {
+        let Ealert = document.createElement('div');
+        Ealert.classList.add(`${nClass}`, 'notifi-box');
+        Ealert.innerHTML =
+            `
+            <p>${parg}</p>
+            `;
+        document.body.appendChild(Ealert);
+        setTimeout(function () {
+            Ealert.style.top = '80px';
+        }, 0)
+        setTimeout(() => {
+            Ealert.style.top = '-100px';
+            setTimeout(() => {
+                Ealert.remove();
+            }, 400)
+        }, 3500);
+    }
+}
+
+// End Subscribe
+
+//Requests
+window.onload = () => newVisit().then((data) => console.log(data));
+
