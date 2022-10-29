@@ -165,8 +165,32 @@
 
         <!-- Contact -->
         <div class="Contact relative section grid-column-1-3" id="Contact">
-            <div class="container">
-                <div class="title" data-name='Contact'>Contact</div>
+            <div class="title" data-name='Contact'>Contact</div>
+            <div class="container relative">
+                <div class="flex">
+                    <div class="msg">
+                        <form>
+                            <input type="text" name="name" id="name" class="name" placeholder="Your Nice Name "
+                                autocomplete="off" required aria-required="true">
+                            <input type="email" name="email" id="email" class="email" placeholder="Your Email"
+                                autocomplete="off" required aria-required="true">
+                            <input type="text" name="title" id="title" placeholder="Your message title" required
+                                aria-required="true">
+                            <textarea name="msg-body" id="msg-body" class="msg-body"
+                                placeholder="What can I help you with ?" required aria-required="true"></textarea>
+                            <input type="text" name="desc" id="desc" class="desc" placeholder="Your desc"
+                                autocomplete="off">
+                            <button class="msg-btn">Send</button>
+                        </form>
+                    </div>
+                    <div class="links">
+                        <div class="phone">
+                            <a href="tel:+"></a>
+                        </div>
+                        <div class="social"></div>
+                        <div class="article"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- End Contact -->
@@ -182,8 +206,7 @@
                             autocomplete="off">
                         <input type="email" name="email" id="email" class="email" placeholder="Your Email" required
                             autocomplete="off">
-                        <!-- <input type="submit" value="subscribe"> -->
-                        <button class="submit">
+                        <button class="sub-btn">
                             <div>subscribe</div>
                         </button>
                     </form>

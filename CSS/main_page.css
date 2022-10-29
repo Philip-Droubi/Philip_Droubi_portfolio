@@ -24,15 +24,18 @@ main {
 }
 
 .title::after {
-    content: attr(data-name);
     position: absolute;
-    top: 50%;
+    user-select: none;
+    width: fit-content;
+    content: attr(data-name);
+    top: 0;
     left: 0;
     color: rgb(203 210 236 / 6%);
-    font-size: 153px;
-    left: 0;
-    text-align: center;
-    transform: translateY(-52%);
+    /* color: red; */
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 1;
 }
 
 .About {
@@ -272,6 +275,69 @@ main {
     background-color: var(--dark-blue);
 }
 
+.Contact .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Contact .flex .msg {
+    flex-basis: 50%;
+}
+
+.Contact .flex .msg form {
+    margin: auto;
+    min-width: 230px;
+    width: 70%;
+}
+
+.Contact .flex .msg input,
+.Contact .flex .msg textarea {
+    display: block;
+    margin-bottom: 16px;
+    width: 100%;
+    color: var(--dark-blue);
+    max-width: 320px;
+    padding: 10px 20px;
+    resize: vertical;
+    /* background-color: #99c9ffc7; */
+    background-image: linear-gradient(160deg, #68b5dd, #357f9e);
+    min-height: 40px;
+    border-radius: 5px;
+}
+
+.Contact .flex .msg textarea {
+    max-height: 500px;
+}
+
+.Contact .flex .msg input {
+    background-color: #99c9ffc7;
+}
+
+.Contact .flex .msg form input::placeholder,
+.Contact .flex .msg form textarea::placeholder {
+    font-style: italic;
+    color: rgba(219, 219, 219, 0.87);
+}
+
+.Contact .flex .msg .msg-btn {
+    background-color: var(--nice-cyan);
+    color: white;
+    padding: 10px 60px;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.Contact .flex .msg .msg-btn:hover {
+    padding: 10px 70px;
+}
+
+.Contact .flex .links {
+    flex-basis: 45%;
+}
+
+
+
 .Subscribe {
     background-color: rgb(39, 35, 35);
     background-image: url(../Images/Others/sub.jpg);
@@ -342,10 +408,10 @@ main {
     border-right: none;
     caret-color: var(--nice-cyan);
     color: #fafaff;
-    outline: none;
     max-width: 300px;
 }
 
+.Contact .msg .desc,
 .Subscribe form input[type="text"] {
     width: 0;
     height: 0;
@@ -354,7 +420,7 @@ main {
     opacity: 0;
 }
 
-.Subscribe form .submit {
+.Subscribe form .sub-btn {
     min-width: 130px;
     color: white;
     padding: 10px 20px;
@@ -367,13 +433,8 @@ main {
     min-height: 51px;
 }
 
-/* .Subscribe form .submit div {
-    min-width: 87.7px;
-} */
-
-.Subscribe form .submit:hover {
+.Subscribe form .sub-btn:hover {
     background-color: var(--blue-color-hover);
-    width: 144px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -385,6 +446,8 @@ main {
     color: whitesmoke;
     flex-basis: 42%;
 }
+
+
 
 @keyframes borderTopColer {
     0% {
@@ -432,7 +495,7 @@ main {
     }
 
     .title::after {
-        font-size: 120px;
+        font-size: 100px;
     }
 
     .About .container .text {
@@ -495,20 +558,29 @@ main {
         margin-top: 6px;
         margin-bottom: 6px;
     }
+
+    .notifi-box {
+        min-width: 70% !important;
+    }
 }
 
 @media (max-width:425px) {
+    .title::after {
+        font-size: 65px;
+        top: 4px;
+    }
+
     .About .container .identity p {
         display: block;
     }
 
-    .Subscribe form .submit {
+    .Subscribe form .sub-btn {
         width: 100%;
         border-top: none;
         border-left: 1px solid white;
     }
 
-    .Subscribe form .submit:hover {
+    .Subscribe form .sub-btn:hover {
         width: 100%;
         border-top-right-radius: 0;
         border-bottom-left-radius: 10px;
@@ -535,7 +607,7 @@ main {
     }
 
     .title::after {
-        font-size: 60px;
+        font-size: 50px;
     }
 }
 
