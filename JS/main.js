@@ -1,6 +1,6 @@
 // CRETEAD BY PHILIP DROUBI
 const k = 'o8teoSL8FW1evoKylF9polLStF5SXB9MMsTcbUark16IKEUSMHQBpfuGfoQmaWHN';
-const url = 'http://127.0.0.1:8000/api';
+const url = 'http://192.168.43.113:8000/api';
 
 async function newVisit() {
     try {
@@ -100,27 +100,28 @@ function LEresize() {
 // End L&E
 
 // Subscribe
-let subsub = document.querySelector(".sub .submit");
+let subsub = document.querySelector(".sub .sub-btn");
 let subclicked = false;
 subsub.addEventListener("click", async (e) => {
-    try {
-        e.preventDefault();
-        if (validateEmail(document.querySelector(".sub .email"))) {
-            if (!subclicked) {
-                subclicked = true;
-                subsub.firstElementChild.innerHTML = "";
-                subsub.firstElementChild.classList.add('loading');
-                newSub()
-                    .then((data) => hundleSub(data))
-                    .then(() => {
-                        subclicked = false;
-                        subsub.firstElementChild.innerHTML = "subscribe";
-                        subsub.firstElementChild.classList.remove('loading');
-                    })
-            }
+    e.preventDefault();
+    if (validateEmail(document.querySelector(".sub .email"))) {
+        if (!subclicked) {
+            subclicked = true;
+            subsub.firstElementChild.innerHTML = "";
+            subsub.firstElementChild.classList.add('loading');
+            newSub()
+                .then((data) => hundleSub(data))
+                .then(() => {
+                    subclicked = false;
+                    subsub.firstElementChild.innerHTML = "subscribe";
+                    subsub.firstElementChild.classList.remove('loading');
+                }).catch((error) => {
+                    subclicked = false;
+                    subsub.firstElementChild.innerHTML = "subscribe";
+                    subsub.firstElementChild.classList.remove('loading');
+                    createNotification('error', `faild to connect`);
+                })
         }
-    } catch (e) {
-        // console.error(e);
     }
 });
 
@@ -154,28 +155,31 @@ function hundleSub(data) {
     }
 }
 
+//End Subscribe
+
 function createNotification(nClass, parg) {
-    if (!document.querySelector("notifi-box")) {
-        let Ealert = document.createElement('div');
-        Ealert.classList.add(`${nClass}`, 'notifi-box');
-        Ealert.innerHTML =
-            `
+    if (document.querySelector(".notifi-box")) {
+        let Elter = document.querySelector(".notifi-box");
+        Elter.remove();
+    }
+    let Ealert = document.createElement('div');
+    Ealert.classList.add(`${nClass}`, 'notifi-box');
+    Ealert.innerHTML =
+        `
             <p>${parg}</p>
             `;
-        document.body.appendChild(Ealert);
-        setTimeout(function () {
-            Ealert.style.top = '80px';
-        }, 0)
+    document.body.appendChild(Ealert);
+    setTimeout(function () {
+        Ealert.style.top = '80px';
+    }, 50)
+    setTimeout(() => {
+        Ealert.style.top = '-100px';
         setTimeout(() => {
-            Ealert.style.top = '-100px';
-            setTimeout(() => {
-                Ealert.remove();
-            }, 400)
-        }, 3500);
-    }
+            Ealert.remove();
+        }, 400)
+    }, 3500);
 }
 
-// End Subscribe
 
 //Requests
 window.onload = () => newVisit().then((data) => console.log(data));
