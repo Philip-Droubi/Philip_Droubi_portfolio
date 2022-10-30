@@ -32,7 +32,7 @@ let contact_spec_func = setTimeout(function () {
     let contact_spec_func_Go = setTimeout(function () {
         contact_spec.style.right = 0;
     }, 500);
-}, 60000);
+}, 1000);
 
 let contact_spec = document.querySelector('.contact-spec');
 contact_spec.onclick = function () {
@@ -179,7 +179,6 @@ function createNotification(nClass, parg) {
         }, 400)
     }, 3500);
 }
-
 
 //Requests
 window.onload = () => newVisit().then((data) => console.log(data));
