@@ -1,6 +1,6 @@
 // CRETEAD BY PHILIP DROUBI
 const k = 'o8teoSL8FW1evoKylF9polLStF5SXB9MMsTcbUark16IKEUSMHQBpfuGfoQmaWHN';
-const url = 'http://127.0.0.1:8000/api';
+const url = 'http://192.168.43.113:8000/api';
 
 async function newVisit() {
     try {
@@ -99,18 +99,103 @@ function LEresize() {
 
 // End L&E
 
+//Contact
+
+let msgBtn = document.querySelector(".Contact .msg-btn");
+let msgClicked = false;
+msgBtn.addEventListener("click", async (e) => {
+    e.preventDefault();
+    let form = document.querySelector(".message-form")
+    if (validateMessageForm(form)) {
+        if (!msgClicked) {
+            msgClicked = true;
+            msgBtn.lastElementChild.innerHTML = "";
+            msgBtn.firstElementChild.style.left = "-10%";
+            msgBtn.style.backgroundColor = "transparent";
+            msgBtn.lastElementChild.classList.add('loading');
+            newMsgReq()
+                .then((data) => {
+                    hundleRes(data, form, 4);
+                })
+                .then(() => {
+                    msgClicked = false;
+                    msgBtn.lastElementChild.innerHTML = "send !";
+                    msgBtn.lastElementChild.classList.remove('loading');
+                    msgBtn.firstElementChild.style.left = "-145%";
+                    msgBtn.style.backgroundColor = "rgba(140, 136, 155, 0.425)";
+
+                }).catch((error) => {
+                    msgClicked = false;
+                    msgBtn.lastElementChild.innerHTML = "send !";
+                    msgBtn.lastElementChild.classList.remove('loading');
+                    msgBtn.firstElementChild.style.left = "-145%";
+                    msgBtn.style.backgroundColor = "rgba(140, 136, 155, 0.425)";
+                    createNotification('error', `faild to connect`);
+                })
+        }
+    }
+});
+
+function validateMessageForm(form) {
+    let name = form[0].value.length;
+    let subject = form[2].value.length;
+    let msg = form[3].value.length;
+
+    if (name == 0) {
+        createNotification('error', '"Name" field is required');
+        return false
+    } else if (name < 2) {
+        createNotification('error', 'Invalid Name');
+        return false
+    }
+
+    if (subject == 0) {
+        createNotification('error', '"Subject" field is required');
+        return false
+    } else if (subject < 2) {
+        createNotification('error', 'Invalid Subject');
+        return false
+    }
+
+    if (msg == 0) {
+        createNotification('error', '"message body" field is required');
+        return false
+    } else if (msg < 2) {
+        createNotification('error', 'Invalid message body');
+        return false
+    }
+    return validateEmail(form[1]);
+}
+
+async function newMsgReq() {
+    var formData = new FormData(document.querySelector(".message-form"));
+    const req = await fetch(`${url}/message`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'X-Api-Key': k
+        },
+        body: formData
+    });
+    return req.json();
+}
+
+// End Contact
+
 // Subscribe
 let subsub = document.querySelector(".sub .sub-btn");
 let subclicked = false;
+
 subsub.addEventListener("click", async (e) => {
     e.preventDefault();
-    if (validateEmail(document.querySelector(".sub .email"))) {
+    let form = document.querySelector(".sub");
+    if (validateEmail(form[0])) {
         if (!subclicked) {
             subclicked = true;
             subsub.firstElementChild.innerHTML = "";
             subsub.firstElementChild.classList.add('loading');
-            newSub()
-                .then((data) => hundleSub(data))
+            newSubReq()
+                .then((data) => hundleRes(data, form, 1))
                 .then(() => {
                     subclicked = false;
                     subsub.firstElementChild.innerHTML = "subscribe";
@@ -125,7 +210,7 @@ subsub.addEventListener("click", async (e) => {
     }
 });
 
-async function newSub() {
+async function newSubReq() {
     var formData = new FormData(document.querySelector(".sub"));
     const req = await fetch(`${url}/Subscribe`, {
         method: 'POST',
@@ -147,17 +232,21 @@ function validateEmail(emailField) {
     return true;
 }
 
-function hundleSub(data) {
+function hundleRes(data, form, length = 1) {
     if (data.status == 201 || data.status == 200) {
         createNotification('correct', `${data.message}`);
+        for (let i = 0; i < length; i++) {
+            console.log(form[i].value);
+            form[i].value = "";
+        }
     } else {
         createNotification('error', `${data.message}`);
     }
 }
-
 //End Subscribe
 
-function createNotification(nClass, parg) {
+
+function createNotification(nClass = 'correct', parg) {
     if (document.querySelector(".notifi-box")) {
         let Elter = document.querySelector(".notifi-box");
         Elter.remove();

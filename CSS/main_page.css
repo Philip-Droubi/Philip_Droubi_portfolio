@@ -276,6 +276,58 @@ main {
     z-index: 100;
 }
 
+.Contact .contact-text {
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.Contact .contact-text p {
+    max-width: 480px;
+    margin: auto;
+    color: var(--whitesmoke);
+    font-size: 18px;
+}
+
+.Contact .contact-text p>span {
+    margin-bottom: 10px;
+    display: block;
+    font-size: 2rem !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Contact .contact-text p .question {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(90deg, var(--blued-cyan-color), var(--orange), rgb(255, 0, 242));
+    background-size: 400% 100%;
+    background-position: 0 0;
+    animation-name: question-color;
+    animation-timing-function: linear;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes question-color {
+    0% {
+        /* background-image: linear-gradient(90deg, var(--blued-cyan-color), 40%, rgb(196, 109, 184)); */
+        background-position: 0 0;
+    }
+
+    50% {
+        /* background-image: linear-gradient(90deg, rgb(196, 109, 184), 40%, var(--orangered)); */
+        background-position: 50% 0;
+    }
+
+    100% {
+        /* background-image: linear-gradient(90deg, var(--orange), 40%, var(--blued-cyan-color)); */
+        background-position: 100% 0;
+    }
+}
+
 .Contact .flex {
     display: flex;
     align-items: center;
@@ -304,17 +356,6 @@ main {
     border-radius: 3px;
 }
 
-.Contact .flex .msg input::after,
-.Contact .flex .msg textarea::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--nice-cyan);
-}
-
 .Contact .flex .msg div {
     position: relative;
 }
@@ -323,7 +364,7 @@ main {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -1.5px;
+    bottom: -2px;
     width: 0;
     background-color: var(--nice-cyan);
     height: 3px;
@@ -367,9 +408,9 @@ main {
 
 .Contact .flex .msg .msg-btn {
     position: relative;
-    background-color: transparent;
     color: white;
-    padding: 10px 0;
+    height: 40px;
+    max-height: 40px;
     width: 162.14px;
     transition: 0.2s;
     border-radius: 1px;
@@ -378,8 +419,8 @@ main {
     margin-right: 0;
     margin-left: calc(100% - 162.14px);
     text-transform: uppercase;
-    transition: 0.3s;
     letter-spacing: 3px;
+    transition: 0.3s;
     overflow: hidden;
 }
 
@@ -397,16 +438,16 @@ main {
 
 }
 
-.Contact .flex .msg .msg-btn:focus-within,
+.Contact .flex .msg .msg-btn:focus-visible,
 .Contact .flex .msg .msg-btn:hover {
     background-color: transparent;
     letter-spacing: 0.8px;
     color: black;
 }
 
-.Contact .flex .msg .msg-btn:focus-within span,
+.Contact .flex .msg .msg-btn:focus-visible span,
 .Contact .flex .msg .msg-btn:hover span {
-    left: -10%;
+    left: -10% !important;
 }
 
 .Contact .flex .links {
@@ -479,7 +520,7 @@ main {
     font-weight: bold;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    background-image: linear-gradient(90deg, var(--blued-cyan-color), 40%, rgb(186, 109, 196));
+    background-image: linear-gradient(90deg, var(--blued-cyan-color), 40%, rgb(196, 109, 184));
 }
 
 .Subscribe {
