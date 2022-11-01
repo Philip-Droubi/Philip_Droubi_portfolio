@@ -138,9 +138,8 @@ textarea {
 .loading {
     text-align: center;
     margin: auto;
-    /* padding: 20px; */
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border-bottom: 2px dashed white;
     border-right: 3px dashed white;
@@ -155,6 +154,7 @@ textarea {
 
 .notifi-box {
     position: fixed;
+    letter-spacing: 0.01px;
     padding: 14px 0;
     top: -100px;
     left: 50%;
