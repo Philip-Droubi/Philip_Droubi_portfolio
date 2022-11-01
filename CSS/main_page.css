@@ -288,7 +288,6 @@ main {
 
 .Contact .flex .msg form {
     margin: auto;
-    /* min-width: 230px; */
     width: 70%;
 }
 
@@ -300,7 +299,7 @@ main {
     color: #acedff;
     padding: 10px 20px;
     resize: vertical;
-    background-color: rgba(138, 137, 137, 0.425);
+    background-color: rgba(160, 160, 160, 0.288);
     min-height: 40px;
     border-radius: 3px;
 }
@@ -378,32 +377,34 @@ main {
     font-size: 18px;
     margin-right: 0;
     margin-left: calc(100% - 162.14px);
-    overflow: hidden;
     text-transform: uppercase;
     transition: 0.3s;
     letter-spacing: 3px;
+    overflow: hidden;
 }
 
 .Contact .flex .msg .msg-btn span {
     content: "";
     position: absolute;
-    background-color: var(--nice-cyan);
+    background-color: var(--blued-cyan-color);
     width: 140%;
-    height: 210%;
+    height: 200%;
     top: -60%;
-    left: -150%;
+    left: -145%;
     transform: rotate(10deg);
     transition: 0.4s;
     z-index: -1;
 
 }
 
+.Contact .flex .msg .msg-btn:focus-within,
 .Contact .flex .msg .msg-btn:hover {
     background-color: transparent;
     letter-spacing: 0.8px;
     color: black;
 }
 
+.Contact .flex .msg .msg-btn:focus-within span,
 .Contact .flex .msg .msg-btn:hover span {
     left: -10%;
 }
@@ -428,6 +429,7 @@ main {
 
 .Contact .flex .links .article {
     margin-top: 7px;
+    width: 100%;
 }
 
 .Contact .flex .links .link {
@@ -436,18 +438,23 @@ main {
 
 .Contact .flex .links a {
     color: #08fdd8;
-    word-break: break-all;
     transition: 0.2s;
 }
 
+.Contact .flex .links .social {
+    text-align: center;
+}
+
 .Contact .flex .links .social-l {
+    margin: 20px 0;
     display: inline-block;
 }
 
 .Contact .flex .links .c-s {
-    border: 1px solid var(--nice-cyan);
+    border: 2px solid var(--nice-cyan);
     padding: 10px 16px;
-    border-radius: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .Contact .flex .links .c-lin {
@@ -455,9 +462,8 @@ main {
 }
 
 .Contact .flex .links .c-s:hover {
-    border: 1px solid #00ad93;
     padding: 10px 25px;
-    border-radius: 3px;
+    background-color: rgba(164, 175, 224, 0.13);
 }
 
 .Contact .flex .links a:hover {
@@ -468,13 +474,13 @@ main {
 .Contact .flex .links .new-sec {
     display: block;
     margin: 20px 0 10px;
+    font-size: 24px;
     width: fit-content;
     font-weight: bold;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    background-image: linear-gradient(90deg, var(--blue-color-hover), 40%, rgb(186, 109, 196));
+    background-image: linear-gradient(90deg, var(--blued-cyan-color), 40%, rgb(186, 109, 196));
 }
-
 
 .Subscribe {
     background-color: rgb(39, 35, 35);
@@ -571,6 +577,7 @@ main {
     min-height: 51px;
 }
 
+.Subscribe form .sub-btn:focus-within,
 .Subscribe form .sub-btn:hover {
     background-color: var(--blue-color-hover);
     border-top-right-radius: 10px;
@@ -697,19 +704,19 @@ main {
     }
 
     .Contact .flex .links {
-        margin-top: 60px;
+        margin-top: 40px;
     }
 
     .Contact .flex .links .new-sec,
     .Contact .flex .links {
         text-align: center;
-        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
 
 @media (max-width:470px) {
-
     .title::after {
         font-size: 80px;
         top: 0;
@@ -748,8 +755,8 @@ main {
         border-left: 1px solid white;
     }
 
+    .Subscribe form .sub-btn:focus-within,
     .Subscribe form .sub-btn:hover {
-        width: 100%;
         border-top-right-radius: 0;
         border-bottom-left-radius: 10px;
     }
@@ -773,6 +780,33 @@ main {
         margin: auto;
         min-width: 50px;
     }
+
+    .Contact .flex .links .mail-p {
+        margin-bottom: 7px;
+    }
+}
+
+@media (max-width:385px) {
+    .Contact .flex .links .social-l:nth-child(1) {
+        width: 100%;
+    }
+}
+
+@media (max-width:360px) {
+
+    .Contact .flex .links .phone-l,
+    .Contact .flex .links .mail-l {
+        display: block;
+        word-break: break-all;
+    }
+
+    .Contact .flex .links .phone-p {
+        margin-bottom: 7px;
+    }
+
+    .Contact .flex .links .social-l:nth-child(2) {
+        width: 100%;
+    }
 }
 
 @media (max-width:340px) {
@@ -782,6 +816,15 @@ main {
 
     .title::after {
         font-size: 50px;
+    }
+
+    .Contact .dev-p {
+        margin-bottom: 7px;
+    }
+
+    .Contact .dev-l {
+        display: block;
+        word-break: break-all;
     }
 }
 

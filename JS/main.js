@@ -1,6 +1,6 @@
 // CRETEAD BY PHILIP DROUBI
 const k = 'o8teoSL8FW1evoKylF9polLStF5SXB9MMsTcbUark16IKEUSMHQBpfuGfoQmaWHN';
-const url = 'http://192.168.43.113:8000/api';
+const url = 'http://127.0.0.1:8000/api';
 
 async function newVisit() {
     try {
@@ -32,7 +32,7 @@ let contact_spec_func = setTimeout(function () {
     let contact_spec_func_Go = setTimeout(function () {
         contact_spec.style.right = 0;
     }, 500);
-}, 1000);
+}, 120000);
 
 let contact_spec = document.querySelector('.contact-spec');
 contact_spec.onclick = function () {
@@ -181,5 +181,6 @@ function createNotification(nClass, parg) {
 }
 
 //Requests
-window.onload = () => newVisit().then((data) => console.log(data));
+window.onload = () => newVisit()
+// window.onload = () => newVisit().then((data) => console.log(data));
 
