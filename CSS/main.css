@@ -13,6 +13,7 @@
     --semi-light-blue: #17255A;
     --dark-blue: #000C66;
     --blue-color-hover: #14a5ce;
+    --lite-cyan: #08fdd8;
     --blued-cyan-color: #08b8fd;
     --margin: 80px;
 }
@@ -109,6 +110,7 @@ body {
     background-color: var(--body-background-color);
     min-height: 100vh;
     padding-top: 60px;
+    background-color: var(--semi-light-blue);
 }
 
 body::-webkit-scrollbar:horizontal {
