@@ -1,5 +1,5 @@
 // CRETEAD BY PHILIP DROUBI
-
+const construction = true;
 let berg_icon = document.querySelector('.berg_icon');
 let page_width = this.innerWidth;
 let Berger = false;
@@ -128,5 +128,13 @@ document.addEventListener('click', event => {
     }
 }
 )
+
+if (!construction) constructionFunc();
+
+function constructionFunc() {
+    let constructionSection = document.querySelector('.construction');
+    console.log(constructionSection);
+    constructionSection.classList.add('hidden');
+}
 
 
