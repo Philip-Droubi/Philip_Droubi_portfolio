@@ -117,5 +117,5 @@ function createNotification(nClass = 'correct', parg) {
 }
 
 export {
-    newSubReq, newVisit, newMsgReq, validateMessageForm, validateEmail, hundleRes, createNotification
+    newSubReq, newVisit, newMsgReq, validateMessageForm, validateEmail, hundleRes, createNotification,
 }
