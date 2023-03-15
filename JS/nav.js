@@ -71,6 +71,7 @@ function open_Berger() {
         force_Close_Berger(document.querySelectorAll('.nav_menu').length);
     }
     let nav_menu = document.createElement('div');
+    let date = new Date()
     nav_menu.innerHTML =
         `
         <div class="image">
@@ -83,7 +84,7 @@ function open_Berger() {
                 <li><a href="#Contact">Contact</a></li> 
                 <li><a href="#Subscribe">Subscribe</a></li>
             </ul>
-            <p>&copy; 2022</p>
+            <p class="copy-right-date">&copy; ${date.getFullYear()}</p>
         `
     nav_menu.classList.add('nav_menu');
     document.body.appendChild(nav_menu);
@@ -108,7 +109,7 @@ function force_Close_Berger(num) {
         nav_menu.remove();
         berg_icon.classList.remove('close-berg');
     }
-    //On fast click when menu is open nav_menu open several time which cose a bug 
+    //On fast click when menu is open nav_menu open several time which cause a bug 
     //So that this function is required
 }
 
@@ -127,13 +128,12 @@ document.addEventListener('click', event => {
         }
     }
 }
-)
+);
 
 if (!construction) constructionFunc();
 
 function constructionFunc() {
     let constructionSection = document.querySelector('.construction');
-    console.log(constructionSection);
     constructionSection.classList.add('hidden');
 }
 

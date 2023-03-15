@@ -271,6 +271,36 @@ main {
     background-color: var(--semi-light-blue);
 }
 
+.Projects .buttons ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
+}
+
+.Projects .buttons ul li button {
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.918);
+    background-color: rgba(190, 218, 255, 0.26);
+    transition: 0.22s;
+    text-transform: capitalize;
+}
+
+.Projects .buttons ul li button:not(.Projects .buttons ul li .active):hover {
+    background-color: var(--blued-cyan-color);
+    padding: 10px 16px;
+    filter: hue-rotate(20deg);
+}
+
+.Projects .active {
+    background-color: var(--blued-cyan-color) !important;
+    padding: 10px 16px;
+}
+
 .Contact {
     background-color: var(--dark-blue);
     z-index: 100;
@@ -913,6 +943,22 @@ footer .name {}
     .Contact .dev-l {
         display: block;
         word-break: break-all;
+    }
+
+    .Projects .buttons ul {
+        flex-wrap: wrap;
+    }
+
+    .Projects .buttons ul li button {
+        width: 90px;
+    }
+
+    .Projects .buttons ul li button {
+        width: 90px;
+    }
+
+    .Projects .buttons ul li button:not(.Projects .buttons ul li .active):hover {
+        padding: 10px;
     }
 }
 

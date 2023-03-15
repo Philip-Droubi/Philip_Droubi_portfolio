@@ -1,0 +1,26 @@
+{
+    "personal_information": {
+        "full_name": "Philip Marwan Droubi",
+        "address": "Syria Damascus, Jaramana",
+        "citizenship": "Arab Syrian",
+        "date_of_birth": "August 29,2001",
+        "recruitment_state": "Exempted",
+        "birth_year": 2001
+    },
+    "skills": [
+        "Laravel",
+        "SQL",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git & GitHub"
+    ],
+    "phone_num": "+963 959 880 596",
+    "email": "philipdroubi@gmail.com",
+    "socials": {
+        "facebook": "https://www.facebook.com/philipp.droubi.1",
+        "linkedIn": "https://www.linkedin.com/in/philip-droubidsadassadsad",
+        "github": "https://github.com/Philip-Droubi"
+    }
+}

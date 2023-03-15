@@ -15,6 +15,7 @@
     display: block;
     width: fit-content;
     margin: auto;
+    user-select: none;
 }
 
 @keyframes hammerAnim {
