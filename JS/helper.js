@@ -6,22 +6,27 @@ let subBtn = document.querySelector(".sub .sub-btn");
 let msgClicked = false;
 let subclicked = false;
 
-export function setInfo(data) {
+export function setInfo() {
     let date = new Date();
     let personalInfo = document.querySelectorAll('.identity div p');
     let phoneNum = document.querySelector('.phone-l');
     let mail = document.querySelector('.mail-l');
     let age = document.querySelector('.age');
     let copyRight = document.querySelector('footer .copy-right');
-    personalInfo[0].textContent = data.personal_information.full_name;
-    personalInfo[1].textContent = data.personal_information.address;
-    personalInfo[2].textContent = data.personal_information.citizenship;
-    personalInfo[3].textContent = data.personal_information.date_of_birth;
-    personalInfo[4].textContent = data.personal_information.recruitment_state;
-    phoneNum.textContent = `${data.phone_num}`;
-    mail.textContent = `${data.email}`;
-    copyRight.textContent = ` ${date.getFullYear()}`;
-    age.textContent = date.getFullYear() - data.personal_information.birth_year;
+    fetch('./data.json')
+        .then((response) => response.json())
+        .then((data) => {
+            personalInfo[0].textContent = data.personal_information.full_name;
+            personalInfo[1].textContent = data.personal_information.address;
+            personalInfo[2].textContent = data.personal_information.citizenship;
+            personalInfo[3].textContent = data.personal_information.date_of_birth;
+            personalInfo[4].textContent = data.personal_information.recruitment_state;
+            phoneNum.textContent = `${data.phone_num}`;
+            mail.textContent = `${data.email}`;
+            copyRight.textContent = ` ${date.getFullYear()}`;
+            age.textContent = date.getFullYear() - data.personal_information.birth_year;
+            addSkills(data.skills);
+        });
 }
 
 export function contactSpecFunc() {
