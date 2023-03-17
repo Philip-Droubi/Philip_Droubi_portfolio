@@ -1,10 +1,10 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js'
-import data from '../data.json' assert{type: "json"};
+// import data from '../data.json' assert{type: "json"};
 import * as helper from './helper.js';
 
 /* all page Info */
-helper.setInfo(data)
+helper.setInfo();
 
 /* Special Contact */
 let contact_spec_func = setTimeout(helper.contactSpecFunc(), 100);
@@ -22,10 +22,6 @@ btt.onclick = helper.backToTop;
 
 /* End Back To Top */
 
-/*   SKILLS    */
-helper.addSkills(data.skills);
-// End Skills
-
 // L&E
 var lt821 = false;  //window width less than 821px
 helper.LEresize(lt821);
@@ -34,6 +30,18 @@ window.onresize = () => {
     lt821 = !lt821;
 };
 // End L&E
+
+// Projects
+let chosenCategory = "All";
+let ProjectBtns = document.querySelectorAll('.Projects .buttons button');
+ProjectBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        ProjectBtns.forEach(ele => ele.classList.remove("active"));
+        btn.classList.add("active");
+        chosenCategory = btn.id;
+    });
+});
+// End Projects
 
 //Contact
 let msgBtn = document.querySelector(".Contact .msg-btn");
