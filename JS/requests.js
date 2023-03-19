@@ -82,6 +82,41 @@ function validateEmail(emailField) {
     return true;
 }
 
+function validateloginForm(form) {
+    let name = form[0].value.length;
+    let password = form[1].value.length;
+
+    if (name == 0) {
+        createNotification('error', '"Name" field is required');
+        return false
+    } else if (name < 2) {
+        createNotification('error', 'Invalid Name');
+        return false
+    }
+
+    if (password == 0) {
+        createNotification('error', '"password" field is required');
+        return false
+    } else if (password < 6) {
+        createNotification('error', 'Invalid password');
+        return false
+    }
+    return true;
+}
+
+async function loginReq(form) {
+    var formData = new FormData(form);
+    const req = await fetch(`${url}/login`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'X-Api-Key': k
+        },
+        body: formData
+    });
+    return req.json();
+}
+
 function hundleRes(data, form, length = 1) {
     if (data.status == 201 || data.status == 200) {
         createNotification('correct', `${data.message}`);
@@ -117,5 +152,6 @@ function createNotification(nClass = 'correct', parg) {
 }
 
 export {
-    newSubReq, newVisit, newMsgReq, validateMessageForm, validateEmail, hundleRes, createNotification,
+    newSubReq, newVisit, newMsgReq, validateMessageForm,
+    validateEmail, hundleRes, createNotification, validateloginForm, loginReq
 }

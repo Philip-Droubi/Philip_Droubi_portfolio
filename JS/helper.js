@@ -3,8 +3,10 @@ import * as Req from './requests.js'
 
 let msgBtn = document.querySelector(".Contact .msg-btn");
 let subBtn = document.querySelector(".sub .sub-btn");
+let loginBtn = document.querySelector('.login-form button');
 let msgClicked = false;
 let subclicked = false;
+let loginClicked = false;
 
 export function setInfo() {
     let date = new Date();
@@ -88,7 +90,7 @@ export function LEresize(lt821) {
 
 export function sendMsg(e) {
     e.preventDefault();
-    let form = document.querySelector(".message-form")
+    let form = document.querySelector(".message-form");
     if (Req.validateMessageForm(form)) {
         if (!msgClicked) {
             msgClicked = true;
@@ -106,14 +108,16 @@ export function sendMsg(e) {
                     msgBtn.lastElementChild.classList.remove('loading');
                     msgBtn.firstElementChild.style.left = "-145%";
                     msgBtn.style.backgroundColor = "rgba(140, 136, 155, 0.425)";
+                    msgBtn.blur();
                 }).catch((error) => {
                     msgClicked = false;
                     msgBtn.lastElementChild.innerHTML = "send !";
                     msgBtn.lastElementChild.classList.remove('loading');
                     msgBtn.firstElementChild.style.left = "-145%";
                     msgBtn.style.backgroundColor = "rgba(140, 136, 155, 0.425)";
+                    msgBtn.blur();
                     Req.createNotification('error', `faild to connect`);
-                })
+                });
         }
     }
 }
@@ -132,12 +136,49 @@ export function subscribe(e) {
                     subclicked = false;
                     subBtn.firstElementChild.innerHTML = "subscribe";
                     subBtn.firstElementChild.classList.remove('loading');
+                    subBtn.blur();
                 }).catch((error) => {
                     subclicked = false;
                     subBtn.firstElementChild.innerHTML = "subscribe";
                     subBtn.firstElementChild.classList.remove('loading');
+                    subBtn.blur();
                     Req.createNotification('error', `faild to connect`);
                 })
+        }
+    }
+}
+
+export function login(e) {
+    e.preventDefault();
+    let form = document.querySelector(".login-form");
+    let span = document.querySelector(".login-form button span");
+    if (Req.validateloginForm(form)) {
+        if (!loginClicked) {
+            loginClicked = true;
+            loginBtn.lastElementChild.innerHTML = "";
+            loginBtn.firstElementChild.style.left = "-10%";
+            loginBtn.style.backgroundColor = "transparent";
+            loginBtn.lastElementChild.classList.add('loading');
+            Req.loginReq(form)
+                .then((data) => {
+                    Req.hundleRes(data, form, 2);
+                })
+                .then(() => {
+                    loginClicked = false;
+                    loginBtn.lastElementChild.innerHTML = "login";
+                    loginBtn.lastElementChild.classList.remove('loading');
+                    loginBtn.firstElementChild.style.left = "-145%";
+                    loginBtn.style.backgroundColor = "rgba(140, 136, 155, 0.425)";
+                    loginBtn.blur();
+                }).catch((error) => {
+                    loginClicked = false;
+                    loginBtn.lastElementChild.innerHTML = "login";
+                    loginBtn.lastElementChild.classList.remove('loading');
+                    loginBtn.firstElementChild.style.left = "-145%";
+                    loginBtn.style.backgroundColor = "rgba(140, 136, 155, 0.425)";
+                    loginBtn.blur();
+                    Req.createNotification('error', `faild to connect`);
+                });
         }
     }
 }
