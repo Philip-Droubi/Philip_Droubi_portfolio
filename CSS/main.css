@@ -107,7 +107,6 @@ html {
 body {
     font-family: "Rubik", sans-serif;
     font-size: var(--font-size);
-    background-color: var(--body-background-color);
     min-height: 100vh;
     padding-top: 60px;
     background-color: var(--semi-light-blue);

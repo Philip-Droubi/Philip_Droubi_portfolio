@@ -462,7 +462,6 @@ main {
     transform: rotate(10deg);
     transition: 0.4s;
     z-index: -1;
-
 }
 
 .Contact .flex .msg .msg-btn:focus-visible,
