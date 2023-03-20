@@ -162,6 +162,10 @@ export function login(e) {
             Req.loginReq(form)
                 .then((data) => {
                     Req.hundleRes(data, form, 2);
+                    if (data.status == 200) {
+                        sessionStorage.setItem('token', data.data.token);
+                        window.location.pathname = "HTML/Dash.html";
+                    }
                 })
                 .then(() => {
                     loginClicked = false;
@@ -181,4 +185,16 @@ export function login(e) {
                 });
         }
     }
+}
+
+export function testToken() {
+    Req.testToken()
+        .then((data) => {
+            if (data === 200) {
+                window.location.pathname == "/HTML/Dash.html" ? null : window.location.pathname = "/HTML/Dash.html";
+            } else {
+                window.location.pathname == "/HTML/Dash.html" ? window.location.pathname = "/HTML/Login.html" : null;
+                sessionStorage.removeItem('token');
+            }
+        });
 }

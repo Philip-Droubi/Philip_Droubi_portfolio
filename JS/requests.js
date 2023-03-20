@@ -117,6 +117,18 @@ async function loginReq(form) {
     return req.json();
 }
 
+async function testToken() {
+    const req = await fetch(`${url}/testToken`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'X-Api-Key': k,
+            'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+        },
+    });
+    return req.status;
+}
+
 function hundleRes(data, form, length = 1) {
     if (data.status == 201 || data.status == 200) {
         createNotification('correct', `${data.message}`);
@@ -153,5 +165,5 @@ function createNotification(nClass = 'correct', parg) {
 
 export {
     newSubReq, newVisit, newMsgReq, validateMessageForm,
-    validateEmail, hundleRes, createNotification, validateloginForm, loginReq
+    validateEmail, hundleRes, createNotification, validateloginForm, loginReq, testToken
 }
