@@ -1,5 +1,6 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js'
+import { User } from './classes/User.js'
 
 let msgBtn = document.querySelector(".Contact .msg-btn");
 let subBtn = document.querySelector(".sub .sub-btn");
@@ -43,7 +44,7 @@ export function contactSpecFunc() {
     document.body.appendChild(contact_spec);
     let contact_spec_func_Go = setTimeout(function () {
         contact_spec.style.right = 0;
-    }, 500);
+    }, 80000);
 }
 
 export function clickOnContactSpec(contact_spec) {
@@ -164,6 +165,7 @@ export function login(e) {
                     Req.hundleRes(data, form, 2);
                     if (data.status == 200) {
                         sessionStorage.setItem('token', data.data.token);
+                        creatUser(data.data.user);
                         window.location.pathname = "HTML/Dash.html";
                     }
                 })
@@ -197,4 +199,11 @@ export function testToken() {
                 sessionStorage.removeItem('token');
             }
         });
+}
+
+function creatUser(user) {
+    new User(user.name, user.email, user.id);
+    sessionStorage.setItem('userName', user.name);
+    sessionStorage.setItem('useremail', user.email);
+    sessionStorage.setItem('userid', user.id);
 }

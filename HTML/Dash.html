@@ -18,15 +18,57 @@
     <link rel="stylesheet" href="../CSS/Normalize.css">
     <link rel="stylesheet" href="../CSS/all.min.css">
     <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/dash.css">
+    <link rel="stylesheet" href="../CSS/Dash/dash.css">
 </head>
 
 <body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo" aria-label="portfolio main page">
+                <img src="../Images/favicon/icons8-p-cute-clipart-96.png" alt="Logo">
+            </a>
+            <div class="welcome">
+                Welcome <span class="name"></span> !
+            </div>
+            <div class="berg hidden">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <main class="dashMain">
+        <!-- right side menu -->
+        <section>
+            <h1><i class="fas fa-chart-line"></i> DashBoard</h1>
+            <ul>
+                <li><button id="statistics" class="active"><i class="fas fa-chart-column"></i> statistics</button></li>
+                <li><button id="admins"><i class="fa fa-user-secret" aria-hidden="true"></i> admins</button>
+                </li>
+                <li><button id="emails"><i class="fa fa-envelope" aria-hidden="true"></i> emails</button>
+                </li>
+                <li><button id="projects"><i class="fas fa-screwdriver    "></i> Projects</button></li>
+            </ul>
+        </section>
+        <div class="page">
+            <div class="statePage hidden"></div>
+            <div class="adminsPage hidden">
+                <table class="adminsTable">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th class="options">options</th>
+                    </tr>
+                </table>
+                <button class="addAdmin add" aria-label="add new admin to the portfolio" data-text="Add new Admin"><i
+                        class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
         integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="../JS/dash.js" type="module"></script>
-
     </script>
-
+    <script src="../JS/Dash/dash.js" type="module"></script>
 </body>

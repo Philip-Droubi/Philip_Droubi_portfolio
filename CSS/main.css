@@ -77,21 +77,19 @@ html {
     }
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 12px;
-
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background-color: #ffffff98;
     border-radius: 4px;
     box-shadow: inset 2px 0 2px 0 rgba(0, 0, 0, 0.233),
         inset -2px 0 2px 0 rgba(0, 0, 0, 0.233);
 }
 
-::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background-image: linear-gradient(180deg, var(--nice-cyan), rgb(136, 0, 118));
-    /* background-image: linear-gradient(180deg, rgb(172, 172, 252), rgb(151, 9, 170)); */
     box-shadow: inset 1px 0 2px 0 rgba(0, 0, 0, 0.233),
         inset -1px 0 2px 0 rgba(0, 0, 0, 0.233);
 }
@@ -184,6 +182,69 @@ textarea {
     border: 2px solid red;
 }
 
+table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 2px solid #bbb;
+    padding: 8px;
+}
+
+th.options {
+    width: 80px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+button.add {
+    position: relative;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: larger;
+    border: 2px solid blue;
+    background-color: #206efd;
+    color: var(--right-section-background);
+    transition: 0.2s;
+    box-shadow: 0 0 9px 2px #0000ff6e;
+    z-index: 100;
+}
+
+button.add:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 9px 2px #0000ff9a;
+}
+
+button.add::after {
+    content: attr(data-text);
+    background-color: #222;
+    position: absolute;
+    width: 140px;
+    left: 200px;
+    bottom: -20px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 20px;
+    border-top-right-radius: 2px;
+    transition: 0.3s;
+}
+
+button.add:hover::after {
+    transform: scale(1);
+    left: -155px;
+}
 
 @keyframes rotate {
     0% {

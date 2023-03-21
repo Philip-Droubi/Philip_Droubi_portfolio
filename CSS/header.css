@@ -20,14 +20,14 @@ nav .logo {
     align-items: center;
 }
 
-a img {
+nav a img {
     width: 40px;
     border: 2px solid var(--nice-cyan);
     border-radius: 4px;
     transition: 0.2s;
 }
 
-a img:hover {
+nav a img:hover {
     animation-name: navLogo;
     animation-duration: 0.25s;
     animation-iteration-count: infinite;
