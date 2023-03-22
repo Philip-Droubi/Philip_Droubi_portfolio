@@ -1,5 +1,5 @@
 // CRETEAD BY PHILIP DROUBI
-const url = 'http://127.0.0.1:8000/api';
+const url = 'https://philip-droubi-portfolio.000webhostapp.com/api';
 const k = 'o8teoSL8FW1evoKylF9polLStF5SXB9MMsTcbUark16IKEUSMHQBpfuGfoQmaWHN';
 
 async function newVisit() {
@@ -8,7 +8,7 @@ async function newVisit() {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'X-Api-Key': k
+                'X-Api-Key': k,
             }
         });
         return req.json();
