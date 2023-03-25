@@ -1,7 +1,27 @@
 // CRETEAD BY PHILIP DROUBI
 
 export class Project {
-    constructor(name, code, liveSite, img, desc, type) {
+    static projectsData = [];
+    constructor(id, name = "", codeSite = "", liveSite = "", imgs = [], desc = "", type = 1, techs = [], isFEM = fasle, FEMLink = "") {
+        this.id = id;
+        this.name = name;
+        this.codeSite = codeSite;
+        this.liveSite = liveSite;
+        this.imgs = imgs;
+        this.desc = desc;
+        this.type = type;
+        this.techs = techs;
+        this.isFEM = isFEM;
+        this.FEMLink = FEMLink;
+    }
 
+    addProject() {
+        Project.projectsData.push(this);
     }
 }
+
+/**
+ * Types 1 : front
+ * 2 : Back
+ * 3 : others
+ */

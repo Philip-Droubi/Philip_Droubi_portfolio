@@ -1,6 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js'
 import { User } from './classes/User.js'
+import { Project } from './classes/Project.js'
 
 let msgBtn = document.querySelector(".Contact .msg-btn");
 let subBtn = document.querySelector(".sub .sub-btn");
@@ -9,14 +10,14 @@ let msgClicked = false;
 let subclicked = false;
 let loginClicked = false;
 
-export function setInfo() {
+export async function setInfo() {
     let date = new Date();
     let personalInfo = document.querySelectorAll('.identity div p');
     let phoneNum = document.querySelector('.phone-l');
     let mail = document.querySelector('.mail-l');
     let age = document.querySelector('.age');
     let copyRight = document.querySelector('footer .copy-right');
-    fetch('./data.json')
+    await fetch('./data.json')
         .then((response) => response.json())
         .then((data) => {
             personalInfo[0].textContent = data.personal_information.full_name;
@@ -206,4 +207,64 @@ function creatUser(user) {
     sessionStorage.setItem('userName', user.name);
     sessionStorage.setItem('useremail', user.email);
     sessionStorage.setItem('userid', user.id);
+}
+
+export async function getProjects() {
+    await fetch('./Projects.json')
+        .then((response) => response.json())
+        .then((data) => {
+            storeProjects(data);
+        });
+    renderProjects();
+}
+
+function renderProjects() {
+    let projects = Project.projectsData;
+
+    projects.forEach(p => {
+        if (p.imgs.length > 1) {
+            let i = 0;
+            setInterval(() => {
+                i++;
+                if (i == p.imgs.length) i = 0;
+                createNewImg(p, i);
+            }, 6000);
+        }
+    });
+}
+
+function createNewImg(p, i) {
+    let imgSlider = document.querySelector(`[data-pid="${p.id}"] .imgSlider`);
+    let oldImg = document.querySelector(`[data-pid="${p.id}"] .imgSlider .img`);
+    let newImg = document.querySelector(`[data-pid="${p.id}"] .imgSlider .img2`);
+    let newImgEle = document.querySelector(`[data-pid="${p.id}"] .imgSlider .img2 img`);
+    oldImg.className = '';
+    oldImg.classList.add("img0");
+    newImg.className = '';
+    newImg.classList.add("img");
+    newImgEle.setAttribute('src', `${p.imgs[i]}`);
+    let newestImg = document.createElement('div');
+    newestImg.classList.add('img2');
+    newestImg.innerHTML = `
+    <img src="" alt="${p.name}">
+    `
+    imgSlider.appendChild(newestImg);
+    setInterval(() => {
+        oldImg.remove();
+    }, 800);
+}
+
+export function sortProjects(data) {
+    console.log(data);
+}
+
+export function storeProjects(data) {
+    data.forEach(p => {
+        let project = new Project(p.id, p.name, p.codeSite, p.liveSite, p.imgs, p.desc, p.type, p.techs, p.isFEM, p.FEMLink);
+        project.addProject();
+    });
+}
+
+export function checkOnScree(params) {
+
 }
