@@ -1,7 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js'
-// import data from '../data.json' assert{type: "json"};
 import * as helper from './helper.js';
+let data = helper.getProjects();
 
 /* all page Info */
 helper.setInfo();
