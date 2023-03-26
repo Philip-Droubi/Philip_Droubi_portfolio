@@ -1,7 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js';
 import { User } from './classes/User.js';
-import { Project } from './classes/Project.js';
+import { Project, addProject } from './classes/Project.js';
 
 let msgBtn = document.querySelector(".Contact .msg-btn");
 let subBtn = document.querySelector(".sub .sub-btn");
@@ -45,7 +45,7 @@ export function contactSpecFunc() {
     document.body.appendChild(contact_spec);
     let contact_spec_func_Go = setTimeout(function () {
         contact_spec.style.right = 0;
-    }, 80000);
+    }, 100000);
 }
 
 export function clickOnContactSpec(contact_spec) {
@@ -335,6 +335,14 @@ function getProjectLinks(p) {
         FEMLink.innerHTML = `<img src="Images/favicon/FEMicon.png" alt="See ${p.name} solution on frontend mentor site">`;
         links.appendChild(FEMLink);
     }
+    if (p.more.trim()) {
+        let more = document.createElement('button');
+        more.classList.add("moreTag", "moreInfoBtn");
+        more.setAttribute("href", `${p.FEMLink}`);
+        more.setAttribute("title", `Get more Info about the project`);
+        more.innerHTML = `more...`;
+        links.appendChild(more);
+    }
     return links;
 }
 
@@ -395,10 +403,14 @@ export function sortProjects(data) {
 export function storeProjects(data) {
     data.forEach(p => {
         let project = new Project(p.id, p.name, p.codeSite, p.liveSite, p.imgs, p.desc, p.type, p.techs, p.isFEM, p.FEMLink, p.more);
-        project.addProject();
+        addProject(p);
     });
 }
 
 export function checkOnScree(params) {
+
+}
+
+export function generateMoreInfoSec() {
 
 }

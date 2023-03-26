@@ -1,7 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
 
 export class Project {
-    static projectsData = [];
+    static projectsData = new Map();
     constructor(id, name = "", codeSite = "", liveSite = "", imgs = [], desc = "", type = 1, techs = [], isFEM = fasle, FEMLink = "", more = "") {
         this.id = id;
         this.name = name;
@@ -15,10 +15,14 @@ export class Project {
         this.FEMLink = FEMLink;
         this.more = more;
     }
+}
+export function addProject(p) {
+    Project.projectsData.set(p.id, p);
+    return true;
+}
 
-    addProject() {
-        Project.projectsData.push(this);
-    }
+export function getProjectByID(id) {
+    return Project.projectsData.get(id);
 }
 
 /**
