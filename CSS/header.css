@@ -5,7 +5,7 @@ nav {
     background-color: var(--navBar-color);
     padding: 10px 0;
     margin-top: -60px;
-    z-index: 10000;
+    z-index: 600;
 }
 
 nav>.container {
