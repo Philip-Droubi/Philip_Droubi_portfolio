@@ -1,10 +1,11 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js'
 import * as helper from './helper.js';
-let data = helper.getProjects();
 
 /* all page Info */
 helper.setInfo();
+let data = helper.getProjects();
+// helper.renderProjects();
 
 /* Special Contact */
 let contact_spec_func = setTimeout(helper.contactSpecFunc(), 100);

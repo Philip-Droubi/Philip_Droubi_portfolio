@@ -1,7 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
-import * as Req from './requests.js'
-import { User } from './classes/User.js'
-import { Project } from './classes/Project.js'
+import * as Req from './requests.js';
+import { User } from './classes/User.js';
+import { Project } from './classes/Project.js';
 
 let msgBtn = document.querySelector(".Contact .msg-btn");
 let subBtn = document.querySelector(".sub .sub-btn");
@@ -218,19 +218,124 @@ export async function getProjects() {
     renderProjects();
 }
 
-function renderProjects() {
+async function createProjectsCards() {
     let projects = Project.projectsData;
-
+    let projectsSection = document.querySelector('.projectsGrid');
     projects.forEach(p => {
-        if (p.imgs.length > 1) {
-            let i = 0;
-            setInterval(() => {
-                i++;
-                if (i == p.imgs.length) i = 0;
-                createNewImg(p, i);
-            }, 6000);
-        }
+        let card = document.createElement('div');
+        card.classList.add("card", "project");
+        card.setAttribute('data-pid', `${p.id}`);
+        let loadingBar = document.createElement('div');
+        loadingBar.classList.add('loadingBar');
+        card.appendChild(loadingBar);
+        let imgSlider = document.createElement('div');
+        imgSlider.classList.add('imgSlider');
+        imgSlider.innerHTML =
+            `
+        <div class="img">
+            <img src="${p.imgs[0]}" alt="${p.name} image 0">
+        </div>
+        <div class="img2">
+            <img src="" alt="${p.name}">
+        </div>
+        `
+        card.appendChild(imgSlider);
+        let info = document.createElement('div');
+        info.classList.add('info');
+        info.innerHTML =
+            `
+        <p class="Pname">${p.name}</p>
+        <p class="Pdesc">${p.desc}</p>
+        <p class="type">Type : <span class="typeString">${getProjectType(p.type)}</span></p>
+        `
+        info.appendChild(getProjectsTechs(p.techs))
+        card.appendChild(info);
+        let links = getProjectLinks(p);
+        card.appendChild(links);
+        let after = document.createElement('span');
+        after.classList.add('after');
+        card.appendChild(after);
+        projectsSection.appendChild(card);
     });
+}
+
+function getProjectType(type) {
+    switch (type) {
+        case 1:
+            return "FrontEnd"
+            break;
+        case 2:
+            return "BackEnd"
+            break;
+        case 3:
+            return "Game"
+            break;
+        case 4:
+            return "FullStack"
+            break;
+        default:
+            return "N/A"
+            break;
+    }
+}
+
+function getProjectsTechs(techs) {
+    let techsDiv = document.createElement('div');
+    techsDiv.classList.add('techs');
+    let parg = document.createElement('p');
+    parg.innerHTML = "Techs used : ";
+    techsDiv.appendChild(parg);
+    let ul = document.createElement('ul');
+    techs.forEach(t => {
+        let li = document.createElement('li');
+        li.classList.add(`${t}Tag`, "tag");
+        li.textContent = t;
+        ul.appendChild(li);
+    });
+    techsDiv.appendChild(ul);
+    return techsDiv;
+}
+
+function getProjectLinks(p) {
+    let links = document.createElement('div');
+    links.classList.add('links');
+    if (p.codeSite.trim()) {
+        let codeSiteLink = document.createElement('a');
+        codeSiteLink.classList.add("codeSiteLink");
+        codeSiteLink.setAttribute("href", `${p.codeSite}`);
+        codeSiteLink.setAttribute("target", "_blank");
+        codeSiteLink.setAttribute("rel", "noopener noreferrer");
+        codeSiteLink.setAttribute("aria-label", `See ${p.name} Site Code`);
+        codeSiteLink.setAttribute("title", "See The Code");
+        codeSiteLink.setAttribute("data-desc", "See The Code");
+        codeSiteLink.innerHTML = `<i class="fa fa-code" aria-hidden="true"></i>`;
+        links.appendChild(codeSiteLink);
+    }
+    if (p.liveSite.trim()) {
+        let liveSiteLink = document.createElement('a');
+        liveSiteLink.classList.add("liveSiteLink");
+        liveSiteLink.setAttribute("href", `${p.liveSite}`);
+        liveSiteLink.setAttribute("target", "_blank");
+        liveSiteLink.setAttribute("rel", "noopener noreferrer");
+        liveSiteLink.setAttribute("aria-label", `See ${p.name} Site`);
+        liveSiteLink.setAttribute("title", "Live Site");
+        liveSiteLink.setAttribute("data-desc", "Live Site");
+        liveSiteLink.innerHTML = `<i class="fas fa-broadcast-tower"></i>`;
+        links.appendChild(liveSiteLink);
+    }
+    if (p.FEMLink.trim() && p.isFEM) {
+        let FEMLink = document.createElement('a');
+        FEMLink.classList.add("FEMLink");
+        FEMLink.setAttribute("href", `${p.FEMLink}`);
+        FEMLink.setAttribute("target", "_blank");
+        FEMLink.setAttribute("rel", "noopener noreferrer");
+        FEMLink.setAttribute("aria-label", `See ${p.name} Solution on Frontend Mentor`);
+        FEMLink.setAttribute("title", `See ${p.name} Solution on Frontend Mentor`);
+        FEMLink.setAttribute("data-desc", "See ${p.name} Solution on Frontend Mentor");
+        FEMLink.innerHTML = `<img src="Images/favicon/FEMicon.png" alt="See ${p.name} solution on frontend mentor site">`;
+        links.appendChild(FEMLink);
+    }
+    return links;
 }
 
 function createNewImg(p, i) {
@@ -254,13 +359,42 @@ function createNewImg(p, i) {
     }, 800);
 }
 
+export async function renderProjects() {
+    await createProjectsCards();
+    let projects = Project.projectsData;
+    projects.forEach(p => {
+        if (p.imgs.length > 1) {
+            let i = 0;
+            setInterval(() => {
+                i++;
+                if (i == p.imgs.length) i = 0;
+                createNewImg(p, i);
+            }, 6000);
+        }
+    });
+    // let projects = document.querySelectorAll('.project');
+    // let projectsData = Project.projectsData;
+
+    // projectsData.forEach(p => {
+    //     if (p.imgs.length > 1) {
+    //         let project = document.querySelector()
+    //         let i = 0;
+    //         setInterval(() => {
+    //             i++;
+    //             if (i == p.imgs.length) i = 0;
+    //             createNewImg(p, i);
+    //         }, 6000);
+    //     }
+    // });
+}
+
 export function sortProjects(data) {
     console.log(data);
 }
 
 export function storeProjects(data) {
     data.forEach(p => {
-        let project = new Project(p.id, p.name, p.codeSite, p.liveSite, p.imgs, p.desc, p.type, p.techs, p.isFEM, p.FEMLink);
+        let project = new Project(p.id, p.name, p.codeSite, p.liveSite, p.imgs, p.desc, p.type, p.techs, p.isFEM, p.FEMLink, p.more);
         project.addProject();
     });
 }

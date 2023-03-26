@@ -2,7 +2,7 @@
 
 export class Project {
     static projectsData = [];
-    constructor(id, name = "", codeSite = "", liveSite = "", imgs = [], desc = "", type = 1, techs = [], isFEM = fasle, FEMLink = "") {
+    constructor(id, name = "", codeSite = "", liveSite = "", imgs = [], desc = "", type = 1, techs = [], isFEM = fasle, FEMLink = "", more = "") {
         this.id = id;
         this.name = name;
         this.codeSite = codeSite;
@@ -13,6 +13,7 @@ export class Project {
         this.techs = techs;
         this.isFEM = isFEM;
         this.FEMLink = FEMLink;
+        this.more = more;
     }
 
     addProject() {
