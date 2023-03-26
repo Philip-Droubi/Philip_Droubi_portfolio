@@ -10,6 +10,10 @@
     --Pdesc-color: #ff99e6;
     --more-background: #222;
     --more-color: #eee;
+    --after-sec-background-color: #6075ffd7;
+    --after-sec-boxShadow-color: #00083869;
+    --hover-after-sec-background-color: #0288d1db;
+    --hover-after-sec-boxShadow-color: #0288d1db;
 }
 
 .projectsGrid {
@@ -63,22 +67,22 @@
 .card .after {
     border-top-right-radius: 100%;
     position: absolute;
-    background-color: #0289d191;
+    background-color: var(--after-sec-background-color);
     width: 150%;
     height: 82%;
     bottom: -30%;
     left: -70%;
-    box-shadow: 0 0 15px 20px #0289d191;
+    box-shadow: 0 0 10px 15px var(--after-sec-boxShadow-color);
     /* box-shadow: 0 0 15px 20px #0288d1db; */
     z-index: 5;
     transition: 0.3s;
 }
 
 .card:hover .after {
-    background-color: #0288d1db;
+    background-color: var(--hover-after-sec-background-color);
     bottom: -24%;
     left: -30%;
-    box-shadow: 0 0 15px 20px #0288d1db;
+    box-shadow: 0 0 15px 20px var(--hover-after-sec-boxShadow-color);
 }
 
 .card .img {
@@ -141,6 +145,7 @@
     font-weight: 600;
     font-size: 26px;
     letter-spacing: 1.15px;
+    max-width: 70%;
 }
 
 .card .info .Pdesc {
@@ -203,7 +208,7 @@
     /* border-bottom-left-radius: 8px; */
     border-bottom-right-radius: 8px;
     background-color: #0289d191;
-    padding: 4px 10px 0;
+    padding: 4px 10px 3px;
     left: -200px;
     /* left: 50%;
     transform: translateX(-50%); */
