@@ -7,15 +7,15 @@
     --js-background: #cfb431;
     --js-color: #eee;
     --Pname-color: var(--nice-cyan);
-    /* --Pname-color: #ffee00; */
     --Pdesc-color: #ff6fdb;
-    /* --Pdesc-color: #ff99e6; */
     --more-background: #222;
     --more-color: #eee;
     --after-sec-background-color: #262f66d7;
     --after-sec-boxShadow-color: #00083869;
     --hover-after-sec-background-color: #0288d1db;
     --hover-after-sec-boxShadow-color: #0288d1db;
+    --exit-btn-BG: rgba(255, 255, 255, 0.1);
+    --exit-btn-BG-hover: rgba(219, 23, 23, 0.8);
 }
 
 .projectsGrid {
@@ -183,20 +183,15 @@
     justify-content: space-between;
     position: absolute;
     top: 0;
-    /* top: -48px; */
-    /* border-bottom-left-radius: 8px; */
     border-bottom-right-radius: 8px;
     background-color: #0289d191;
     padding: 4px 10px 3px;
     left: -200px;
-    /* left: 50%;
-    transform: translateX(-50%); */
     transition: 0.38s;
     z-index: 50;
 }
 
 .card:hover .links {
-    /* top: 0; */
     left: 0;
 }
 
@@ -288,7 +283,7 @@
     background-color: rgba(34, 34, 34, 0.98);
     color: white;
     font-size: 18px;
-    padding: 18px;
+    padding: 40px 18px 18px 18px;
     border-radius: 8px;
     overflow-x: scroll;
     overflow-x: hidden;
@@ -306,40 +301,61 @@
     border-radius: 2px;
 }
 
-.moreInfo h1 {
+.moreInfo .exit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    color: var(--more-color);
+    background-color: var(--exit-btn-BG);
+    transition: 0.18s;
+}
+
+.moreInfo .exit:hover {
+    background-color: var(--exit-btn-BG-hover);
+}
+
+.moreInfo .content h1 {
     margin: 12px 0;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 2px;
 }
 
-.moreInfo p {
+.moreInfo .content p {
     margin: 10px 0;
 }
 
-.moreInfo ul {
+.moreInfo .content ul {
     margin: 8px 0;
     line-height: 1.3;
 }
 
-.moreInfo ul li {
+.moreInfo .content ul li {
     list-style: inside;
     list-style-position: inside;
     margin-left: 20px;
 }
 
-.moreInfo a {
+.moreInfo .content a {
     color: wheat;
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-decoration-color: darkseagreen;
-}
-
-.moreInfo i {
     margin-right: 5px;
 }
 
-.moreInfo img {
+.moreInfo .content i {
+    margin-right: 5px;
+}
+
+.moreInfo .content img {
     display: block;
     margin: 18px auto;
     border-radius: 4px;
@@ -347,7 +363,7 @@
     border: 2px dashed rgb(255, 217, 147);
 }
 
-.moreInfo .center {
+.moreInfo .content .center {
     text-align: center;
 }
 
@@ -355,7 +371,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.301);
+    background-color: rgba(0, 0, 0, 0.35);
     width: 100%;
     height: 100%;
     z-index: 1000;

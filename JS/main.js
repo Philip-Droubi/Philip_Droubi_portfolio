@@ -33,15 +33,33 @@ window.onresize = () => {
 // End L&E
 
 // Projects
-let chosenCategory = "All";
+
+// Sorting
+let chosenCategory = 0;
 let ProjectBtns = document.querySelectorAll('.Projects .buttons button');
 ProjectBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         ProjectBtns.forEach(ele => ele.classList.remove("active"));
         btn.classList.add("active");
-        chosenCategory = btn.id;
+        chosenCategory = +btn.id;
+        helper.sortProjects(chosenCategory);
     });
 });
+
+// End Sorting
+
+// More info
+
+document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("moreInfoBtn")) {
+        helper.generateMoreInfoSec(e.target.parentElement.parentElement.getAttribute('data-pid'));//Project id
+    } else if (e.target.classList.contains("exit") || e.target.classList.contains("backdrop") || e.target.parentElement.classList.contains("exit")) {
+        helper.closeMoreInfoSec();
+    }
+});
+
+// End More info
+
 // End Projects
 
 //Contact

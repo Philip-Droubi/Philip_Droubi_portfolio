@@ -22,7 +22,7 @@ export function addProject(p) {
 }
 
 export function getProjectByID(id) {
-    return Project.projectsData.get(id);
+    return Project.projectsData.get(+id);
 }
 
 /**
