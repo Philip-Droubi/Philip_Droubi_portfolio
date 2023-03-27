@@ -15,7 +15,6 @@ async function newVisit() {
         });
         return req.json();
     } catch (e) {
-        console.log(e);
     }
 }
 

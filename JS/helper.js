@@ -1,7 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js';
 import { User } from './classes/User.js';
-import { Project, addProject } from './classes/Project.js';
+import { Project, addProject, getProjectByID } from './classes/Project.js';
 
 let msgBtn = document.querySelector(".Contact .msg-btn");
 let subBtn = document.querySelector(".sub .sub-btn");
@@ -9,6 +9,7 @@ let loginBtn = document.querySelector('.login-form button');
 let msgClicked = false;
 let subclicked = false;
 let loginClicked = false;
+let moreInfoSecShowen = false;
 
 export async function setInfo() {
     let date = new Date();
@@ -225,6 +226,7 @@ async function createProjectsCards() {
         let card = document.createElement('div');
         card.classList.add("card", "project");
         card.setAttribute('data-pid', `${p.id}`);
+        card.setAttribute('data-type', `${p.type}`);
         let loadingBar = document.createElement('div');
         loadingBar.classList.add('loadingBar');
         card.appendChild(loadingBar);
@@ -380,24 +382,21 @@ export async function renderProjects() {
             }, 6000);
         }
     });
-    // let projects = document.querySelectorAll('.project');
-    // let projectsData = Project.projectsData;
-
-    // projectsData.forEach(p => {
-    //     if (p.imgs.length > 1) {
-    //         let project = document.querySelector()
-    //         let i = 0;
-    //         setInterval(() => {
-    //             i++;
-    //             if (i == p.imgs.length) i = 0;
-    //             createNewImg(p, i);
-    //         }, 6000);
-    //     }
-    // });
 }
 
-export function sortProjects(data) {
-    console.log(data);
+export function sortProjects(type) {
+    let projectCards = document.querySelectorAll(".projectsGrid .card");
+    projectCards.forEach(p => {
+        if (type == 0) {
+            p.classList.remove("hidden");
+        } else {
+            if (p.getAttribute('data-type') != type) {
+                p.classList.add("hidden");
+            } else {
+                p.classList.remove("hidden");
+            }
+        }
+    });
 }
 
 export function storeProjects(data) {
@@ -411,6 +410,20 @@ export function checkOnScree(params) {
 
 }
 
-export function generateMoreInfoSec() {
+export function generateMoreInfoSec(Pid) {
+    let moreInfo = document.querySelector(".moreInfo");
+    let moreInfoContent = document.querySelector(".moreInfo .content");
+    let backdrop = document.querySelector(".backdrop");
+    backdrop.classList.remove("hidden");
+    moreInfo.classList.remove("hidden");
+    moreInfoContent.innerHTML = `${getProjectByID(Pid).more}`;
+    moreInfoSecShowen = true;
+}
 
+export function closeMoreInfoSec() {
+    let moreInfo = document.querySelector(".moreInfo");
+    let backdrop = document.querySelector(".backdrop");
+    backdrop.classList.add("hidden");
+    moreInfo.classList.add("hidden");
+    moreInfoSecShowen = false;
 }
