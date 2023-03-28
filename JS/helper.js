@@ -46,7 +46,7 @@ export function contactSpecFunc() {
     document.body.appendChild(contact_spec);
     let contact_spec_func_Go = setTimeout(function () {
         contact_spec.style.right = 0;
-    }, 100000);
+    }, 120000);
 }
 
 export function clickOnContactSpec(contact_spec) {

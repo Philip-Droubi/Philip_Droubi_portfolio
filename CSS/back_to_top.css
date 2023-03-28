@@ -19,14 +19,16 @@
     color: var(--nice-cyan);
 }
 
-#top:hover {
-    background-color: #2f41749d;
-}
-
-#top:hover i {
-    transform: translateY(-6px);
-}
-
 #top.show {
     right: 20px;
+}
+
+@media (hover:hover) {
+    #top:hover {
+        background-color: #2f41749d;
+    }
+
+    #top:hover i {
+        transform: translateY(-6px);
+    }
 }
