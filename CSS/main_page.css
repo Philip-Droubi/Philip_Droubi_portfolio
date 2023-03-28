@@ -31,7 +31,6 @@ main {
     top: 0;
     left: 0;
     color: rgb(203 210 236 / 6%);
-    /* color: red; */
     font-size: 120px;
     text-transform: uppercase;
     font-weight: bold;
@@ -54,7 +53,6 @@ main {
 
 .About .text {
     padding-bottom: 24px;
-    /* font-weight: bolder; */
     line-height: 1.2;
     flex-basis: 47%;
     font-size: 18px;
@@ -664,9 +662,10 @@ footer {
     width: 100%;
     color: var(--nice-cyan);
     margin-bottom: -40px;
+    text-align: center;
 }
 
-footer p::after {
+footer p:nth-child(1):after {
     content: "";
     position: absolute;
     width: 100%;
@@ -679,35 +678,57 @@ footer p::after {
 }
 
 footer p {
-    margin: auto;
+    display: inline-block;
     text-align: center !important;
 }
 
-footer .heart {
-    animation: heart 0.8s linear infinite;
+footer .wrapper {
+    display: inline-block;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    user-select: none;
+    cursor: grabbing;
 }
 
-footer .name {}
+#pulsingheart {
+    position: relative;
+    margin: 0 12px;
+}
 
-@keyframes heart {
-    0% {
-        background-color: red;
+#pulsingheart .after,
+#pulsingheart .before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 18px;
+    background: #aa0000;
+    border-radius: 5px 5px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    animation-name: pulsecolor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#pulsingheart .after {
+    left: -10px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    animation: pulsecolor 1s infinite;
+}
+
+@keyframes pulse {
+    10% {
+        transform: scale(1.4)
     }
+}
 
-    12.5% {
-        background-color: rgb(4, 0, 255);
-    }
-
-    50% {
-        background-color: rgb(4, 0, 255);
-    }
-
-    51% {
-        background-color: transparent;
-    }
-
-    100% {
-        background-color: transparent;
+@keyframes pulsecolor {
+    10% {
+        background: #dd0000
     }
 }
 

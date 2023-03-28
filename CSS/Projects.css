@@ -277,7 +277,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 86%;
     max-width: 400px;
     max-height: 80vh;
     background-color: rgba(34, 34, 34, 0.98);
@@ -375,4 +375,23 @@
     width: 100%;
     height: 100%;
     z-index: 1000;
+}
+
+@media (min-width:610px) and (max-width:741px) {
+    .projectsGrid {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width:390px) {
+    .projectsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .card .info {
+        background: linear-gradient(0, #262f66 60%, var(--after-sec-background-color));
+        background-color: unset;
+    }
 }

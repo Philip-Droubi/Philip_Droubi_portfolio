@@ -279,6 +279,40 @@ nav li a:hover::after {
     text-shadow: 1px 2px 1px rgba(255, 255, 255, 0.089);
 }
 
+.downloadCVBtn {
+    position: relative;
+    background-color: var(--blue-color-hover);
+    color: white;
+    padding: 12px 26px;
+    font-size: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.downloadCVBtn::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -110px;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.35);
+    transition: 0.3s;
+}
+
+.downloadCVBtn:hover {
+    transform: scale(1.09);
+}
+
+.downloadCVBtn:hover::after {
+    width: 230px;
+    height: 230px;
+}
+
 @media (max-width:644px) {
     .small-summery {
         min-height: calc(100vh - 60px);
@@ -316,5 +350,10 @@ nav li a:hover::after {
 
     .small-summery .small-about {
         max-width: 100% !important;
+    }
+
+    .downloadCVForm {
+        text-align: center;
+        padding-top: 18px;
     }
 }
