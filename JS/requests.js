@@ -10,7 +10,7 @@ async function newVisit() {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
-                'X-Api-Key': k
+                // 'X-Api-Key': k
             }
         });
         return req.json();

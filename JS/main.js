@@ -128,3 +128,19 @@ function getHeartMessage(num) {
             return "You broke the system";
     }
 }
+
+// console.log(getJsonString(``));
+
+function getJsonString(str = "") {
+    str = str.replace(/(\r\n|\n|\r)/gm, "");
+    for (let index = 0; index < str.length; index++) {
+        if (str[index] == `"`) {
+            str = str.slice(0, index) + "\\\"" + str.slice(index + 1);
+            index++;
+        }
+    }
+    return str;
+}
+
+
+
