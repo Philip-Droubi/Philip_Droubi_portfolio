@@ -43,8 +43,8 @@
     },
     {
         "id": 3,
-        "name": "fylo landing page",
-        "desc": "fylo landing page with two column layout Solution",
+        "name": "Fylo landing page",
+        "desc": "Fylo landing page with two column layout Solution",
         "codeSite": "https://github.com/Philip-Droubi/fylo-landing-page-with-two-column-layout",
         "liveSite": "https://philip-droubi.github.io/fylo-landing-page-with-two-column-layout/",
         "more": "<h1>Test H1</h1><p>Paragraph</p><ul><li>li</li><li>li</li><li>li</li><li>li</li></ul><div class=\"center\">center</div><a href=\"dsdsadsa\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"See more info\" data-desc=\"See More Info\" title=\"See More Info\">Link</a><i class=\"fab fa-dashcube\"></i>img<img src=\"Images/Others/sub.jpg\" alt=\"dsadas\">",
@@ -60,5 +60,27 @@
         "isFEM": true,
         "FEMLink": "https://www.frontendmentor.io/solutions/fylolandingpagewithtwocolumnlayout-solution-JAFXj-8syU",
         "type": 1
+    },
+    {
+        "id": 4,
+        "name": "AntsWar Game",
+        "desc": "AntsWar Game is an OpenGL university project, It talks about ants invading your PC, and you have to take up your weapon and fight these rowdy ants.",
+        "codeSite": "",
+        "liveSite": "",
+        "more": "<h1 class =\"center\">About the Project :</h1><p>This project was completed within the third university year in Computer Graphics subject,<br><br>The project has been done in c++ with the opengl legacy library.</p><h2>The project has been done by:</h2><ul><li>Kawther Khadam AlJammeh</li><li>Philip Droubi</li><li>Mohammed Ala'a Al-Olabi</li></ul>",
+        "imgs": [
+            "Images/Projects/AntsWarGame/AWG1.jpg",
+            "Images/Projects/AntsWarGame/AWG2.jpg",
+            "Images/Projects/AntsWarGame/AWG3.jpg",
+            "Images/Projects/AntsWarGame/AWG4.jpg",
+            "Images/Projects/AntsWarGame/AWG5.jpg"
+        ],
+        "techs": [
+            "OpenGL",
+            "CPP"
+        ],
+        "isFEM": false,
+        "FEMLink": "",
+        "type": 3
     }
 ]

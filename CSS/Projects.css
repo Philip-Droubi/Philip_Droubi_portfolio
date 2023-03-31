@@ -6,11 +6,16 @@
     --css-color: #eee;
     --js-background: #cfb431;
     --js-color: #eee;
-    --Pname-color: var(--nice-cyan);
+    --openGL-color: #eee;
+    --openGL-background: rgb(255, 44, 44);
+    --Pname-color: #fffb00;
+    /* --Pname-color: var(--nice-cyan); */
     --Pdesc-color: #ff6fdb;
     --more-background: #222;
     --more-color: #eee;
-    --after-sec-background-color: #262f66d7;
+    --after-sec-background-color: #262f667a;
+    --after-sec-background-color-tow: #262f66b0;
+    /* --after-sec-background-color: #262f66d7; */
     --after-sec-boxShadow-color: #00083869;
     --hover-after-sec-background-color: #0288d1db;
     --hover-after-sec-boxShadow-color: #0288d1db;
@@ -25,6 +30,7 @@
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     width: 100%;
     gap: 14px;
+    transition: 0.3s;
 }
 
 .card {
@@ -33,6 +39,7 @@
     position: relative;
     width: 100%;
     height: 250px;
+    min-width: 325px;
     border-radius: 8px;
     overflow: hidden;
     transition: 0.3s;
@@ -109,7 +116,7 @@
 .card .info {
     position: absolute;
     box-shadow: 0 -3px 5px 0 #00000040;
-    bottom: -45px;
+    bottom: -75px;
     padding: 10px 10px 6px;
     left: 0;
     background-color: var(--after-sec-background-color);
@@ -120,10 +127,12 @@
 
 .card:hover .info {
     bottom: 0;
+    background-color: var(--after-sec-background-color-tow);
 }
 
 .card .info .Pname {
     color: var(--Pname-color);
+    text-shadow: 1.5px 2px 0 rgba(0, 0, 0, 0.85);
     font-weight: 600;
     font-size: 26px;
     letter-spacing: 1.15px;
@@ -238,7 +247,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    padding: 0 4px;
     height: 18px;
     border-radius: 2px;
     font-size: 14px;
@@ -259,6 +268,16 @@
 .JSTag {
     background-color: var(--js-background);
     color: var(--js-color);
+}
+
+.CPPTag {
+    background-color: var(--css-background);
+    color: var(--js-color);
+}
+
+.OpenGLTag {
+    background-color: var(--openGL-background);
+    color: var(--openGL-color);
 }
 
 .moreTag {
@@ -326,6 +345,19 @@
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 2px;
+    border-bottom: 2px solid rgb(247, 199, 112);
+    border-top: 2px solid rgb(247, 199, 112);
+    width: fit-content;
+}
+
+.moreInfo .content h2 {
+    margin: 12px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border-top: 2px solid rgb(247, 199, 112);
+    border-bottom: 2px solid rgb(247, 199, 112);
+    width: fit-content;
+    letter-spacing: 2px;
 }
 
 .moreInfo .content p {
@@ -391,7 +423,11 @@
     }
 
     .card .info {
-        background: linear-gradient(0, #262f66 60%, var(--after-sec-background-color));
+        background: linear-gradient(0, #262f66 80%, var(--after-sec-background-color));
         background-color: unset;
+    }
+
+    .card:hover .info {
+        background: linear-gradient(0, #262f66 20%, #262f665b);
     }
 }

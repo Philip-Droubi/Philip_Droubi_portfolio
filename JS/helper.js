@@ -264,13 +264,13 @@ async function createProjectsCards() {
 function getProjectType(type) {
     switch (type) {
         case 1:
-            return "FrontEnd"
+            return "FrontEnd <i class=\"fa fa-paint-brush\" aria-hidden=\"true\"></i>"
             break;
         case 2:
-            return "BackEnd"
+            return "BackEnd <i class=\"fa fa-gears\" aria-hidden=\"true\"></i>"
             break;
         case 3:
-            return "Game"
+            return "Game <i class=\"fa fa-gamepad\" aria-hidden=\"true\"></i>"
             break;
         case 4:
             return "FullStack"
@@ -291,6 +291,7 @@ function getProjectsTechs(techs) {
     techs.forEach(t => {
         let li = document.createElement('li');
         li.classList.add(`${t}Tag`, "tag");
+        t == "CPP" ? t = "C++" : null;
         li.textContent = t;
         ul.appendChild(li);
     });
