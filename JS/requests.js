@@ -25,7 +25,7 @@ async function newSubReq(form) {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'X-Api-Key': k
+            // 'X-Api-Key': k
         },
         body: formData
     });
@@ -38,7 +38,7 @@ async function newMsgReq(form) {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'X-Api-Key': k
+            // 'X-Api-Key': k
         },
         body: formData
     });

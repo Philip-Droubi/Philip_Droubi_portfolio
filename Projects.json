@@ -22,6 +22,37 @@
     },
     {
         "id": 2,
+        "name": "Vigor App",
+        "desc": "Vigor is a home workout application allows user to practice exercises and stay healthy from thier homes. It's a gym in your pocket 💪🤳🏻.",
+        "codeSite": "",
+        "liveSite": "",
+        "more": "<h1 class=\"flex-center-center \">Vogor App <img src=\"Images/Projects/Vigor/VigorIcon.jpg\" alt=\"Vigor Icon\" width=48px style=\"margin: 0 0 0 10px;\"></h1> <p> <h2>1. So what is <span class=\"orange-color\">Vigor</span> ?</h2> Vigor is a home workout app that is used to help you to do exercises and manage your food system without going to the gym or health centers with social media services to make you have an amazing experiences. </p> <h2>2. What features does the app offer?</h2> <p class=\"main-idea\">1. users system:</p> <ul> <li><i class=\"fa fa-users orange-color\" aria-hidden=\"true\"></i> Multiple user roles : Admin , Managers , Coaches , Dietitians and trainee.</li> <li><i class=\"fa fa-user-circle orange-color\" aria-hidden=\"true\"></i> Create an account either through your email or with a Google account.</li> <li><i class=\"fas fa-user-cog orange-color\" aria-hidden=\"true\"></i> Many account control and modification features.</li> <li><i class=\"fa fa-file orange-color\" aria-hidden=\"true\"></i> Many types of summaries.</li> <li><i class=\"fa fa-shield orange-color\" aria-hidden=\"true\"></i> High security level through OTP code and email verification.</li> <li><i class=\"fas fa-trash-alt orange-color\"></i> The ability of deleting your account and restoring it within 30 days with all its containt.</li> <li><i class=\"fa fa-bell orange-color\" aria-hidden=\"true\"></i> An integrated Notification & Email system to keep you up with everything.</li> <li><i class=\"fa fa-user-plus orange-color\" aria-hidden=\"true\"></i> Ability to subscribe to our systerm to be a coach or dietitians by sending your CV.</li> <li><i class=\"fa fa-search orange-color\"></i> Search for workouts, challenges, diets, users and more...</li> </ul> <p class=\"main-idea\">2. workouts and diets system:</p> <ul> <li><i class=\"fas fa-dumbbell orange-color\"></i> Coachs can create and update Thoughtful workouts and challenges of different types and categories.</li> <li><i class=\"fas fa-seedling orange-color\"></i> Dietitians can create and update Thoughtful Diets of different types and categories.</li> <li><i class=\"fa fa-user-plus orange-color\" aria-hidden=\"true\"></i>Trainee can subscribe to workouts ,challenges and diets</li> <li><i class=\"fa fa-star orange-color\" aria-hidden=\"true\"></i> Trainee can rate or report workouts ,challenges and diets</li> <li><i class=\"fa fa-podcast orange-color\" aria-hidden=\"true\"></i> The ability to take advantage of the device's sensors to perform challenges such as walking, running, and push-ups</li> </ul> <p class=\"main-idea\">3. social network system:</p> <ul> <li><i class=\"fas fa-photo-video orange-color\" aria-hidden=\"true\"></i> Coaches ,Dietitians and Admin can publish three types of posts : <ul> <li><i class=\"fas fa-photo-video orange-color\" aria-hidden=\"true\"></i> Multimedia posts </li> <li><i class=\"fas fa-poll orange-color\"></i> Multiple choices polls</li> <li><i class=\"fas fa-poll-h orange-color\"></i> Tips polls</li> </ul> </li> <li><i class=\"fa fa-plus orange-color\" aria-hidden=\"true\"></i> Follow others or block them.</li> <li><i class=\"fa fa-heart orange-color\" aria-hidden=\"true\"></i> Trainee can react to posts comment on them save or report them.</li> <li><i class=\"fas fa-comments orange-color\"></i> App provide a Real-Time chat.</li> </ul> <p class=\"main-idea\">4. Dashboards & app Control System:</p> <ul> <li><i class=\"fas fa-chart-area orange-color\"></i> Full application control panel.</li> <li><i class=\"fa fa-toggle-off orange-color\" aria-hidden=\"true\"></i> Admin can shutdown the application or disable some of its features.</li> <li><i class=\"fas fa-wrench orange-color\"></i> Review reports and take appropriate action, ban users, approve or disapprove CV requests and many more.</li> <li><i class=\"fa fa-file orange-color\" aria-hidden=\"true\"></i>Periodic detailed reports about the application.</li> </ul> <h2>3. Team</h2> <ul> <li>Frontend (<span class=\"orange-color\">Flutter</span>) :<br> Omar Zaghlouleh - Fadi Asfour<br> </li> <li>Backend (<span class=\"orange-color\">Laravel</span>) :<br> Philip Droubi - Ammar Hunaidi<br> </li> </ul> <h2>4. Wanna watch a video?</h2> <video src=\"Images/Projects/Vigor/video/vigor_video.mp4\" width=\"100%\" controls aria-label=\"vigor promo video\" poster=\"Images/Projects/Vigor/VigorIcon.jpg\" height=\"200px\"></video> <h2>5. Some images</h2> <img src=\"Images/Projects/Vigor/vigor1.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor2.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor3.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor4.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor5.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor6.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor7.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor8.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor9.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor10.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor11.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor12.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor13.jpg\" alt=\"vigor image\"> <img src=\"Images/Projects/Vigor/vigor14.jpg\" alt=\"vigor image\">",
+        "imgs": [
+            "Images/Projects/Vigor/Vigor1.jpg",
+            "Images/Projects/Vigor/Vigor2.jpg",
+            "Images/Projects/Vigor/Vigor3.jpg",
+            "Images/Projects/Vigor/Vigor4.jpg",
+            "Images/Projects/Vigor/Vigor5.jpg",
+            "Images/Projects/Vigor/Vigor6.jpg",
+            "Images/Projects/Vigor/Vigor7.jpg",
+            "Images/Projects/Vigor/Vigor8.jpg",
+            "Images/Projects/Vigor/Vigor9.jpg",
+            "Images/Projects/Vigor/Vigor10.jpg",
+            "Images/Projects/Vigor/Vigor11.jpg",
+            "Images/Projects/Vigor/Vigor12.jpg",
+            "Images/Projects/Vigor/Vigor13.jpg"
+        ],
+        "techs": [
+            "Laravel",
+            "MySQL",
+            "Flutter"
+        ],
+        "isFEM": false,
+        "FEMLink": "",
+        "type": 2
+    },
+    {
+        "id": 3,
         "name": "ClipBoard",
         "desc": "ClipBoard landing page",
         "codeSite": "https://github.com/Philip-Droubi/clipboard-landing-page-master",
@@ -42,7 +73,7 @@
         "type": 1
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "Fylo landing page",
         "desc": "Fylo landing page with two column layout Solution",
         "codeSite": "https://github.com/Philip-Droubi/fylo-landing-page-with-two-column-layout",
@@ -62,7 +93,7 @@
         "type": 1
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "AntsWar Game",
         "desc": "AntsWar Game is an OpenGL university project, It talks about ants invading your PC, and you have to take up your weapon and fight these rowdy ants.",
         "codeSite": "",

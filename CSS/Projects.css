@@ -1,4 +1,6 @@
 /* CREATED BY PHILIP DROUBI */
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700');
+
 :root {
     --html-background: #e96228;
     --html-color: #eee;
@@ -8,6 +10,12 @@
     --js-color: #eee;
     --openGL-color: #eee;
     --openGL-background: rgb(255, 44, 44);
+    --laravel-color: #eee;
+    --laravel-background: rgb(255, 44, 44);
+    --mysql-color: #f7f7f7;
+    --mysql-background: #dd8a00;
+    --flutter-color: #f7f7f7;
+    --flutter-background: #015496;
     --Pname-color: #fffb00;
     /* --Pname-color: var(--nice-cyan); */
     --Pdesc-color: #ff6fdb;
@@ -20,7 +28,7 @@
     --hover-after-sec-background-color: #0288d1db;
     --hover-after-sec-boxShadow-color: #0288d1db;
     --exit-btn-BG: rgba(255, 255, 255, 0.1);
-    --exit-btn-BG-hover: rgba(219, 23, 23, 0.8);
+    --exit-btn-BG-hover: rgba(235, 62, 62, 0.8);
 }
 
 .projectsGrid {
@@ -113,6 +121,27 @@
     filter: blur(0.9px) brightness(0.9);
 }
 
+.card2 .img2 {
+    left: 100%;
+}
+
+.card2 .img0 {
+    left: -100%;
+}
+
+.card2 .img0 img,
+.card2 .img2 img,
+.card2 .img img {
+    width: 100%;
+    transform: none;
+    aspect-ratio: 380/250;
+}
+
+.card2:hover .img img {
+    transform: scale(1.3);
+    filter: blur(0.9px) brightness(0.9);
+}
+
 .card .info {
     position: absolute;
     box-shadow: 0 -3px 5px 0 #00000040;
@@ -132,7 +161,7 @@
 
 .card .info .Pname {
     color: var(--Pname-color);
-    text-shadow: 1.5px 2px 0 rgba(0, 0, 0, 0.85);
+    text-shadow: 1.5px 2px 0 rgba(0, 0, 0, 0.6);
     font-weight: 600;
     font-size: 26px;
     letter-spacing: 1.15px;
@@ -140,21 +169,19 @@
 
 .card .info .Pdesc {
     color: var(--Pdesc-color);
-    font-family: cursive, sans-serif;
+    font-family: cursive, 'Alkatra', sans-serif;
     margin: 6px 0;
-    width: 65%;
     white-space: nowrap;
+    /* width: 65%;
     text-overflow: ellipsis;
-    overflow: hidden;
+    overflow: hidden; */
 }
 
 .card:hover .info .Pdesc {
-    color: var(--Pdesc-color);
-    font-family: cursive, sans-serif;
-    width: initial;
     white-space: unset;
+    /* width: initial;
     text-overflow: unset;
-    overflow: visible;
+    overflow: visible; */
 }
 
 .card .info .techs,
@@ -195,7 +222,7 @@
     border-bottom-right-radius: 8px;
     background-color: #0289d191;
     padding: 4px 10px 3px;
-    left: -200px;
+    left: -220px;
     transition: 0.38s;
     z-index: 50;
 }
@@ -280,6 +307,21 @@
     color: var(--openGL-color);
 }
 
+.LaravelTag {
+    background-color: var(--laravel-background);
+    color: var(--laravel-color);
+}
+
+.MySQLTag {
+    background-color: var(--mysql-background);
+    color: var(--mysql-color);
+}
+
+.FlutterTag {
+    background-color: var(--flutter-background);
+    color: var(--flutter-color);
+}
+
 .moreTag {
     display: inline-flex;
     align-items: center;
@@ -298,7 +340,7 @@
     transform: translate(-50%, -50%);
     width: 86%;
     max-width: 400px;
-    max-height: 80vh;
+    max-height: 86vh;
     background-color: rgba(34, 34, 34, 0.98);
     color: white;
     font-size: 18px;
@@ -341,6 +383,7 @@
 }
 
 .moreInfo .content h1 {
+    padding: 10px 0;
     margin: 12px 0;
     font-size: 24px;
     font-weight: 600;
@@ -351,6 +394,7 @@
 }
 
 .moreInfo .content h2 {
+    padding: 10px 0;
     margin: 12px 0;
     font-size: 20px;
     font-weight: 600;
@@ -362,6 +406,19 @@
 
 .moreInfo .content p {
     margin: 10px 0;
+    letter-spacing: 0.4px;
+    word-spacing: 1.2px;
+    line-height: 1.2;
+}
+
+.moreInfo .content .flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moreInfo .content .orange-color {
+    color: var(--orange);
 }
 
 .moreInfo .content ul {
@@ -373,6 +430,10 @@
     list-style: inside;
     list-style-position: inside;
     margin-left: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.4px;
+    word-spacing: 1.2px;
+    line-height: 1.2;
 }
 
 .moreInfo .content a {
@@ -397,6 +458,16 @@
 
 .moreInfo .content .center {
     text-align: center;
+}
+
+.moreInfo .content .main-idea {
+    text-transform: capitalize;
+    border-bottom: 2px dashed rgb(247, 199, 112);
+    width: fit-content;
+    font-weight: bold;
+    color: #ff75d6;
+    padding: 6px 0;
+    margin-bottom: 20px;
 }
 
 .backdrop {

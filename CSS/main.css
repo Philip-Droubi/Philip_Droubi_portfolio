@@ -246,6 +246,84 @@ button.add:hover::after {
     left: -155px;
 }
 
+.alertTF {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #eee;
+    color: #222;
+    width: 86%;
+    max-width: 380px;
+    font-size: 18px;
+    padding: 18px;
+    border-radius: 8px;
+    border: 4px solid #444;
+    z-index: 1200;
+}
+
+.alertTF h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-bottom: 2px solid rgb(255, 133, 32);
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+.alertTF p {
+    margin: 10px 0;
+}
+
+.alertTF .buttons {
+    margin-top: 28px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.alertTF button {
+    width: 60px;
+    height: 38px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.18s;
+}
+
+.alertTF button.yes {
+    background-color: #65f386;
+    color: #002408;
+}
+
+.alertTF button.no {
+    background-color: #f36565;
+    color: #240000;
+}
+
+@media (hover:hover) {
+    .alertTF button:hover {
+        filter: brightness(1.1);
+        transform: scale(1.15);
+    }
+}
+
+
+
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
 @keyframes rotate {
     0% {
         transform: rotate(360deg);
