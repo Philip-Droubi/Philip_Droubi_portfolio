@@ -10,6 +10,7 @@ let msgClicked = false;
 let subclicked = false;
 let loginClicked = false;
 let moreInfoSecShowen = false;
+let postsSpecialTreatmentArray = [2];
 
 export async function setInfo() {
     let date = new Date();
@@ -217,6 +218,8 @@ export async function getProjects() {
             storeProjects(data);
         });
     renderProjects();
+    FinalTreatPosts();
+    correctCardImgAspectRatio()
 }
 
 async function createProjectsCards() {
@@ -311,7 +314,8 @@ function getProjectLinks(p) {
         codeSiteLink.setAttribute("aria-label", `See ${p.name} Site Code`);
         codeSiteLink.setAttribute("title", "See The Code");
         codeSiteLink.setAttribute("data-desc", "See The Code");
-        codeSiteLink.innerHTML = `<i class="fa fa-code" aria-hidden="true"></i>`;
+        codeSiteLink.innerHTML = `Code`;
+        // codeSiteLink.innerHTML = `<i class="fa fa-code" aria-hidden="true"></i> Code`;
         links.appendChild(codeSiteLink);
     }
     if (p.liveSite.trim()) {
@@ -323,7 +327,8 @@ function getProjectLinks(p) {
         liveSiteLink.setAttribute("aria-label", `See ${p.name} Site`);
         liveSiteLink.setAttribute("title", "Live Site");
         liveSiteLink.setAttribute("data-desc", "Live Site");
-        liveSiteLink.innerHTML = `<i class="fas fa-broadcast-tower"></i>`;
+        liveSiteLink.innerHTML = `Live`;
+        // liveSiteLink.innerHTML = `<i class="fas fa-broadcast-tower"></i>`;
         links.appendChild(liveSiteLink);
     }
     if (p.FEMLink.trim() && p.isFEM) {
@@ -368,6 +373,27 @@ function createNewImg(p, i) {
     setInterval(() => {
         oldImg.remove();
     }, 800);
+}
+
+function FinalTreatPosts() {
+    postsSpecialTreatmentArray.forEach(id => {
+        let card = document.querySelector(`[data-pid="${id}"]`);
+        card.classList.add(`card${id}`);
+    });
+}
+
+export function correctCardImgAspectRatio() {
+    postsSpecialTreatmentArray.forEach(id => {
+        let card = document.querySelector(`[data-pid="${id}"]`);
+        const ruleList = document.styleSheets[8].cssRules;
+        // in the bottom edit what you want
+        for (let i = 0; i < ruleList.length; i++) {
+            if (ruleList[i].selectorText == '.card2 .img0 img, .card2 .img2 img, .card2 .img img') {
+                ruleList[i].style.setProperty("aspect-ratio", `${card.clientWidth - 30}/250`);
+            }
+        }
+    });
+
 }
 
 export async function renderProjects() {
@@ -428,3 +454,27 @@ export function closeMoreInfoSec() {
     moreInfo.classList.add("hidden");
     moreInfoSecShowen = false;
 }
+
+export function createPopup(type, title = "", message = "", cls = "alertTF") {
+    let pop = document.querySelector('.alertTF');
+    let backdrop = document.querySelector(".backdrop");
+    backdrop.classList.remove("hidden");
+    pop.setAttribute('data-type', `${type}`);
+    pop.classList.remove('hidden');
+    document.querySelector(".alertTF h1").textContent = title;
+    document.querySelector(".alertTF p").textContent = message;
+    document.querySelector(".alertTF .yes").setAttribute('data-type', `${type}`);
+    document.querySelector(".alertTF .no").setAttribute('data-type', `${type}`);
+    return true;
+}
+
+export function closePopup() {
+    let pop = document.querySelector('.alertTF');
+    let backdrop = document.querySelector(".backdrop");
+    backdrop.classList.add("hidden");
+    pop.classList.add('hidden');
+    return true;
+}
+
+// popYesBtn.addEventListener('click', () => { });
+

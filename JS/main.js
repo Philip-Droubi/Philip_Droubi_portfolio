@@ -77,6 +77,9 @@ subBtn.addEventListener("click", async (e) => helper.subscribe(e));
 //Others
 window.onload = () => Req.newVisit();
 // window.onload = () => newVisit().then((data) => console.log(data));
+window.onresize = () => {
+    helper.correctCardImgAspectRatio();
+}
 
 // Easter Eggs
 let heart = document.querySelector("footer .wrapper");
@@ -129,9 +132,13 @@ function getHeartMessage(num) {
     }
 }
 
-// console.log(getJsonString(``));
+// console.log(getJsonString(`
+
+// `));
 
 function getJsonString(str = "") {
+    str = str.replace(/\s{2,}/g, ' ');
+    str = str.replace(/\t/g, ' ');
     str = str.replace(/(\r\n|\n|\r)/gm, "");
     for (let index = 0; index < str.length; index++) {
         if (str[index] == `"`) {
@@ -141,6 +148,3 @@ function getJsonString(str = "") {
     }
     return str;
 }
-
-
-
