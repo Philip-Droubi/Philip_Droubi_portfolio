@@ -1,7 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
-const url = 'https://philip-droubi-portfolio.000webhostapp.com/api';
+const url2 = 'https://philip-droubi-portfolio.000webhostapp.com/api';
 const k = 'o8teoSL8FW1evoKylF9polLStF5SXB9MMsTcbUark16IKEUSMHQBpfuGfoQmaWHN';
-const url2 = 'http://127.0.0.1:8000/api';
+const url = 'http://127.0.0.1:8000/api';
 
 
 async function newVisit() {

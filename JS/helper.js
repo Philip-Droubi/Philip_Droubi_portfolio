@@ -10,7 +10,8 @@ let msgClicked = false;
 let subclicked = false;
 let loginClicked = false;
 let moreInfoSecShowen = false;
-let postsSpecialTreatmentArray = [2];
+let cardsSpecialTreatmentArray = [2]; // this array contains projects that need some special work mostly for their images
+let videoTime = 0;
 
 export async function setInfo() {
     let date = new Date();
@@ -47,7 +48,7 @@ export function contactSpecFunc() {
     document.body.appendChild(contact_spec);
     let contact_spec_func_Go = setTimeout(function () {
         contact_spec.style.right = 0;
-    }, 120000);
+    }, 140000);
 }
 
 export function clickOnContactSpec(contact_spec) {
@@ -376,14 +377,14 @@ function createNewImg(p, i) {
 }
 
 function FinalTreatPosts() {
-    postsSpecialTreatmentArray.forEach(id => {
+    cardsSpecialTreatmentArray.forEach(id => {
         let card = document.querySelector(`[data-pid="${id}"]`);
         card.classList.add(`card${id}`);
     });
 }
 
 export function correctCardImgAspectRatio() {
-    postsSpecialTreatmentArray.forEach(id => {
+    cardsSpecialTreatmentArray.forEach(id => {
         let card = document.querySelector(`[data-pid="${id}"]`);
         const ruleList = document.styleSheets[8].cssRules;
         // in the bottom edit what you want
@@ -445,14 +446,21 @@ export function generateMoreInfoSec(Pid) {
     moreInfo.classList.remove("hidden");
     moreInfoContent.innerHTML = `${getProjectByID(Pid).more}`;
     moreInfoSecShowen = true;
+    let video = document.querySelector('.moreInfo .content video');
+    video.currentTime = videoTime;
 }
 
 export function closeMoreInfoSec() {
     let moreInfo = document.querySelector(".moreInfo");
     let backdrop = document.querySelector(".backdrop");
+    let video = document.querySelector('.moreInfo .content video');
     backdrop.classList.add("hidden");
     moreInfo.classList.add("hidden");
     moreInfoSecShowen = false;
+    if (video) {
+        video.pause();
+        videoTime = +video.currentTime.toFixed(1);
+    }
 }
 
 export function createPopup(type, title = "", message = "", cls = "alertTF") {

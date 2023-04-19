@@ -3,7 +3,7 @@ let berg_icon = document.querySelector('.berg_icon');
 let page_width = this.innerWidth;
 let Berger = false;
 let berg_clicked = false;
-const construction = false;
+const construction = true;
 
 if (page_width < 625) {
     nav_Berg();
