@@ -4,7 +4,7 @@ import * as helper from './helper.js';
 import { Project, getProjectByID } from './classes/Project.js';
 import { createNotification } from './requests.js';
 
-/* all page Info */
+/* Init the page */
 helper.setInfo();
 helper.getProjects();
 
