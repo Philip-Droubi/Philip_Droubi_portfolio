@@ -3,7 +3,8 @@ import * as Req from './requests.js'
 import * as helper from './helper.js';
 import { Project, getProjectByID } from './classes/Project.js';
 import { createNotification } from './requests.js';
-
+let currentTime = new Date();
+currentTime = new Date(currentTime.getMonth() + 1 + "-" + currentTime.getDay());
 /* Init the page */
 helper.setInfo();
 helper.getProjects();
@@ -131,6 +132,16 @@ function getHeartMessage(num) {
             return "You broke the system";
     }
 }
+
+//  Festivals
+
+const christmasStart = new Date('12-15');
+const christmasEnd = new Date('01-10');
+// if (currentTime >= christmasStart && currentTime <= christmasEnd) {
+helper.activeChristmasFestival();
+// }
+
+//  End Festivals
 
 // console.log(getJsonString(`
 

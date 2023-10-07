@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="CSS/header.css">
     <link rel="stylesheet" href="CSS/main_page.css">
     <link rel="stylesheet" href="CSS/construction.css">
-    <link rel="stylesheet" href="CSS/Projects.css">
+    <link rel="stylesheet" href="CSS/projects.css">
+    <link rel="stylesheet" href="CSS/festivals.css">
 </head>
 
 <body>
@@ -46,13 +47,14 @@
                 <div class="berg_icon hidden"></div>
             </div>
         </nav>
+        <div></div>
         <div class="construction">
             <div class="container">
                 <p>Still under construction <span class="hammer">🔨</span></p>
             </div>
         </div>
         <!--Small Summery-->
-        <div class="small-summery">
+        <div class="small-summery" id="landing">
             <div class="container">
                 <div class="flex">
                     <div class="text">
@@ -62,8 +64,10 @@
                             Engineer who enjoys
                             playing with code.</p>
                     </div>
-                    <div class="image">
-                        <img src="Images/Philip/Logo.jpeg" alt="Philip Droubi image">
+                    <div class="image relative">
+                        <div class="philip-img">
+                            <img src="Images/Philip/Logo.jpeg" alt="Philip Droubi image">
+                        </div>
                     </div>
                 </div>
                 <form method="get" action="Images/Philip_Droubi_CV.pdf" class="downloadCVForm">
@@ -315,6 +319,7 @@
     </div>
 
     <!-- JS Files -->
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
     <script src="JS/philip_droubi.js"></script>
     <script type="module" src="JS/main.js"></script>
     <script src="JS/requests.js" type="module"></script>
