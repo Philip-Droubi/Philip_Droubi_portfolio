@@ -220,7 +220,7 @@ nav li a:hover::after {
     color: var(--orangered);
 }
 
-.small-summery .image {
+.small-summery .image .philip-img {
     position: relative;
     height: 228px;
     min-width: 228px;
@@ -231,7 +231,7 @@ nav li a:hover::after {
     transition: 0.2s;
 }
 
-.small-summery .image::after {
+.small-summery .image .philip-img::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -332,13 +332,22 @@ nav li a:hover::after {
         color: orangered;
     }
 
-    .small-summery .image img {
+    .small-summery .image {
+        width: 170px !important;
+        height: 170px;
+        border-radius: 50%;
+        margin-bottom: 40px;
+        overflow: hidden !important;
+    }
+
+    .small-summery .image .philip-img img {
         width: 170px;
         height: 170px;
     }
 
-    .small-summery .image {
-        min-width: 170px !important;
+    .small-summery .image .philip-img {
+        min-width: auto;
+        width: 170px !important;
         height: 170px;
         border-radius: 50%;
         margin-bottom: 40px;

@@ -161,7 +161,7 @@ textarea {
     width: 50%;
     text-align: center;
     font-size: 18px;
-    border-radius: 14px;
+    border-radius: 8px;
     min-width: fit-content;
     font-weight: bold;
     line-height: 1.2;
@@ -309,10 +309,6 @@ button.add:hover::after {
         transform: scale(1.15);
     }
 }
-
-
-
-
 
 .backdrop {
     position: fixed;
