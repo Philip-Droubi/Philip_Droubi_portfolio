@@ -491,7 +491,7 @@ export function activeChristmasFestival() {
     let philipImage = document.querySelector('#landing .image');
     let gazelles = document.createElement('div');
     gazelles.innerHTML = `
-    <dotlottie-player src="../images/festivals/christmas/gazelles.lottie"
+    <dotlottie-player src="../Images/festivals/christmas/gazelles.lottie"
     background="transparent" speed="1" direction="1" mode="normal" loop autoplay></dotlottie-player>
     `;
     landing.appendChild(gazelles);
@@ -499,7 +499,7 @@ export function activeChristmasFestival() {
     let starsBalls = document.createElement('div');
     starsBalls.classList.add('landing-stars-balls');
     starsBalls.innerHTML = `
-    <dotlottie-player src="../images/festivals/christmas/stars_from_top.lottie"
+    <dotlottie-player src="../Images/festivals/christmas/stars_from_top.lottie"
     background="transparent" speed="1" direction="1" mode="normal" loop autoplay></dotlottie-player>
     `;
     philipImage.appendChild(starsBalls);
@@ -519,7 +519,7 @@ export function activeChristmasFestival() {
     let threeTrees = document.createElement('div');
     threeTrees.classList.add('contact-trees');
     threeTrees.innerHTML = `
-    <dotlottie-player src="../images/festivals/christmas/three_black_trees.lottie"
+    <dotlottie-player src="../Images/festivals/christmas/three_black_trees.lottie"
     background="transparent" speed="1" direction="1" mode="normal" loop autoplay></dotlottie-player>
     `;
     contact.appendChild(threeTrees);
@@ -528,7 +528,7 @@ export function activeChristmasFestival() {
     let christmasFooterTree = document.createElement('div');
     christmasFooterTree.classList.add('footer-tree');
     christmasFooterTree.innerHTML = `
-    <dotlottie-player src="../images/festivals/christmas/footer_tree.lottie"
+    <dotlottie-player src="../Images/festivals/christmas/footer_tree.lottie"
     background="transparent" speed="1" direction="1" mode="normal" loop autoplay></dotlottie-player>
     `;
     footer.appendChild(christmasFooterTree);
