@@ -114,5 +114,28 @@
         "isFEM": false,
         "FEMLink": "",
         "type": 3
+    },
+    {
+        "id": 6,
+        "name": "Red Swap Blue (RSB)",
+        "desc": "A web game project that implement BFS, DFS, Uniform Cost Search and A* algorithms, in addition to user play.",
+        "codeSite": "https://github.com/Philip-Droubi/Red_Swap_Blue",
+        "liveSite": "https://philip-droubi.github.io/Red_Swap_Blue/",
+        "more": "<h1 class=\"center\">Red Swap Blue</h1> <h2>About the <span class=\"pink-color\">project</span></h2> <p>Red Swap Blue is a web game project that implement BFS, DFS, Uniform Cost Search and A* algorithms, in addition to the possibility of playing by the user.</p> <h2 class=\"main-idea\">Solving LVL2 with BFS algorithm</h2> <p>This level was solved in ~ 17.7s <br>Path moves : 46 <br>Nodes generated : 218780 node generated <br>Solution cost : 218770 node visited </p> <h2 class=\"main-idea\">Solving LVL2 with A* algorithm</h2> <p>This level was solved in ~ 140ms only <br>Path moves : 64 <br>Nodes generated : 2911 node generated <br>Solution cost : 328 node visited </p> <h2>Example for solving <span class=\"pink-color\">LVL2</span> with <span class=\"pink-color\">BFS</span> algorithm </h2> <img src=\"Images/Projects/RSB/RSB6.jpg\" alt=\"\"> <img src=\"Images/Projects/RSB/RSB7.jpg\" alt=\"\"> <img src=\"Images/Projects/RSB/RSB8.jpg\" alt=\"\"> <img src=\"Images/Projects/RSB/RSB9.jpg\" alt=\"\"> <img src=\"Images/Projects/RSB/RSB10.jpg\" alt=\"\"> <img src=\"Images/Projects/RSB/RSB11.jpg\" alt=\"\">",
+        "imgs": [
+            "Images/Projects/RSB/RSB1.jpg",
+            "Images/Projects/RSB/RSB2.jpg",
+            "Images/Projects/RSB/RSB3.jpg",
+            "Images/Projects/RSB/RSB4.jpg",
+            "Images/Projects/RSB/RSB5.jpg"
+        ],
+        "techs": [
+            "HTML",
+            "CSS",
+            "JS"
+        ],
+        "isFEM": false,
+        "FEMLink": "",
+        "type": 3
     }
 ]

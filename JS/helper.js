@@ -447,7 +447,8 @@ export function generateMoreInfoSec(Pid) {
     moreInfoContent.innerHTML = `${getProjectByID(Pid).more}`;
     moreInfoSecShowen = true;
     let video = document.querySelector('.moreInfo .content video');
-    video.currentTime = videoTime;
+    if (video)
+        video.currentTime = videoTime;
 }
 
 export function closeMoreInfoSec() {
