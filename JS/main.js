@@ -137,9 +137,9 @@ function getHeartMessage(num) {
 
 const christmasStart = new Date('12-15');
 const christmasEnd = new Date('01-10');
-// if (currentTime >= christmasStart && currentTime <= christmasEnd) {
-helper.activeChristmasFestival();
-// }
+if (currentTime >= christmasStart && currentTime <= christmasEnd) {
+    helper.activeChristmasFestival();
+}
 
 //  End Festivals
 

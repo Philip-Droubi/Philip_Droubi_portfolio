@@ -79,7 +79,7 @@
         "desc": "Fylo landing page with two column layout Solution",
         "codeSite": "https://github.com/Philip-Droubi/fylo-landing-page-with-two-column-layout",
         "liveSite": "https://philip-droubi.github.io/fylo-landing-page-with-two-column-layout/",
-        "more": "<h1>Test H1</h1><p>Paragraph</p><ul><li>li</li><li>li</li><li>li</li><li>li</li></ul><div class=\"center\">center</div><a href=\"dsdsadsa\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"See more info\" data-desc=\"See More Info\" title=\"See More Info\">Link</a><i class=\"fab fa-dashcube\"></i>img<img src=\"Images/Others/sub.jpg\" alt=\"dsadas\">",
+        "more": "",
         "imgs": [
             "Images/Projects/fyloLandingPage/FLP1.jpg",
             "Images/Projects/fyloLandingPage/FLP2.jpg",
