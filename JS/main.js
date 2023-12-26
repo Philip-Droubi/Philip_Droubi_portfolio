@@ -4,7 +4,6 @@ import * as helper from './helper.js';
 import { Project, getProjectByID } from './classes/Project.js';
 import { createNotification } from './requests.js';
 let currentTime = new Date();
-currentTime = new Date(currentTime.getMonth() + 1 + "-" + currentTime.getDay());
 /* Init the page */
 helper.setInfo();
 helper.getProjects();
@@ -134,10 +133,9 @@ function getHeartMessage(num) {
 }
 
 //  Festivals
-
-const christmasStart = new Date('12-15');
-const christmasEnd = new Date('01-10');
-if (currentTime >= christmasStart && currentTime <= christmasEnd) {
+const christmasStart = new Date('2022-12-12');
+const christmasEnd = new Date(String(currentTime.getFullYear() + 1) + '-01-10');
+if (currentTime.setHours(0, 0, 0, 0) >= christmasStart.setHours(0, 0, 0, 0) && currentTime.setHours(0, 0, 0, 0) <= christmasEnd.setHours(0, 0, 0, 0)) {
     helper.activeChristmasFestival();
 }
 
