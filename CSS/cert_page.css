@@ -1,0 +1,118 @@
+/* CRETEAD BY PHILIP DROUBI */
+.container {
+    transition: 0.3s;
+}
+
+main {
+    display: block;
+}
+
+.cert-section .sec-title {
+    display: flex;
+    align-items: center;
+    color: var(--blued-cyan-color);
+    letter-spacing: 0.1px;
+    margin-top: 24px;
+}
+
+.cert-section .animation {
+    display: inline-block;
+    justify-self: flex-start;
+    width: 106px;
+    height: 106px;
+}
+
+.cert-section .cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.cert-section .cards .cert-card {
+    position: relative;
+    flex: 1;
+    min-width: 380px;
+    max-width: 400px;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: 0.3s;
+    background-color: rgb(232, 230, 255);
+}
+
+.cert-section .cards .cert-card .img {
+    width: 100%;
+    height: 64%;
+}
+
+.cert-section .cards .cert-card .download {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cert-section .cards .cert-card .download button {
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: var(--semi-light-blue);
+    opacity: 0.8;
+}
+
+.cert-section .cards .cert-card .download button:hover {
+    opacity: 1;
+}
+
+.cert-section .cards .cert-card .download button::after {
+    display: none;
+}
+
+.cert-section .cards .cert-card .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.cert-section .cards .cert-card .data {
+    height: 36%;
+    padding: 10px 16px;
+    overflow-y: auto;
+}
+
+.cert-section .cards .cert-card .data::-webkit-scrollbar {
+    background-color: rgb(187, 187, 187);
+    width: 10px;
+    border-top-left-radius: 8px;
+}
+
+.cert-section .cards .cert-card .data::-webkit-scrollbar-thumb {
+    background-color: rgb(75, 117, 255);
+    width: 10px;
+    border-top-left-radius: 8px;
+}
+
+.cert-section .cards .cert-card .data .title {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.cert-section .cards .cert-card .data .date {
+    font-size: 13px;
+    color: #555;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.cert-section .cards .cert-card .data .description {
+    margin-top: 10px;
+    color: #222;
+}
+
+footer {
+    background-color: #001;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}

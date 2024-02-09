@@ -248,7 +248,7 @@ main {
 }
 
 .LEinner .text {
-    margin: 10px 0;
+    margin: 10px 0 20px;
     font-size: 18px;
 }
 
@@ -263,6 +263,49 @@ main {
     -webkit-background-clip: text;
     background-image: linear-gradient(0deg, var(--blue-color-hover), #cfd8dc);
     width: fit-content;
+}
+
+.external-link {
+    display: inline-block;
+    position: relative;
+    color: rgba(255, 255, 255, 0.918);
+    background-color: var(--blued-cyan-color) !important;
+    border-radius: 2px;
+    padding: 8px 36px 8px 16px;
+    text-transform: capitalize;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.external-link::before {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 200px;
+    transform: rotate(30deg);
+    background-color: rgba(255, 255, 255, 0.426);
+    top: -100px;
+    left: -120px;
+    transition: 0.6s;
+}
+
+.external-link:hover {
+    background-color: #0584b6 !important;
+}
+
+.external-link:hover::before {
+    top: 0;
+    left: 90%;
+}
+
+.external-link::after {
+    position: absolute;
+    content: "\2192";
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 90%;
 }
 
 .Projects {

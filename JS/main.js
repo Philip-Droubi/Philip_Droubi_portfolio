@@ -1,6 +1,7 @@
 // CRETEAD BY PHILIP DROUBI
 import * as Req from './requests.js'
 import * as helper from './helper.js';
+import * as event from './events.js';
 import { Project, getProjectByID } from './classes/Project.js';
 import { createNotification } from './requests.js';
 let currentTime = new Date();
@@ -133,10 +134,10 @@ function getHeartMessage(num) {
 }
 
 //  Festivals
-const christmasStart = new Date('2022-12-12');
-const christmasEnd = new Date(String(currentTime.getFullYear() + 1) + '-01-10');
-if (currentTime.setHours(0, 0, 0, 0) >= christmasStart.setHours(0, 0, 0, 0) && currentTime.setHours(0, 0, 0, 0) <= christmasEnd.setHours(0, 0, 0, 0)) {
-    helper.activeChristmasFestival();
+const christmasStart = new Date(0, 11, 15, 0, 0, 0);
+const christmasEnd = new Date(0, 0, 16, 0, 0, 0);
+if (helper.isCurrentTimeBetween(christmasStart, christmasEnd)) {
+    event.activeChristmasFestival();
 }
 
 //  End Festivals
