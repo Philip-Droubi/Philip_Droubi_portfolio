@@ -108,7 +108,6 @@ heart.addEventListener('click', () => {
 });
 
 function getHeartMessage(num) {
-    console.log(num);
     switch (+num) {
         case 0.9:
             return "Ok I can handle it 😏";
