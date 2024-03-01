@@ -10,6 +10,7 @@ main {
 .cert-section .sec-title {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: var(--blued-cyan-color);
     letter-spacing: 0.1px;
     margin-top: 24px;
@@ -25,6 +26,7 @@ main {
 .cert-section .cards {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 28px;
 }
@@ -32,13 +34,18 @@ main {
 .cert-section .cards .cert-card {
     position: relative;
     flex: 1;
-    min-width: 380px;
+    min-width: 360px;
     max-width: 400px;
-    height: 310px;
+    height: 400px;
     overflow: hidden;
     border-radius: 8px;
     transition: 0.3s;
     background-color: rgb(232, 230, 255);
+}
+
+.cert-section .cards .cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 6px 3px 0 #ffffff24;
 }
 
 .cert-section .cards .cert-card .img {
@@ -61,6 +68,10 @@ main {
     opacity: 0.8;
 }
 
+.downloadCVForm {
+    padding-top: 0 !important;
+}
+
 .cert-section .cards .cert-card .download button:hover {
     opacity: 1;
 }
@@ -76,7 +87,7 @@ main {
 
 .cert-section .cards .cert-card .data {
     height: 36%;
-    padding: 10px 16px;
+    padding: 10px 16px 8px;
     overflow-y: auto;
 }
 
@@ -106,7 +117,7 @@ main {
 }
 
 .cert-section .cards .cert-card .data .description {
-    margin-top: 10px;
+    margin-top: 8px;
     color: #222;
 }
 
