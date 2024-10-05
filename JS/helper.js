@@ -252,7 +252,7 @@ async function createProjectsCards() {
             `
         <p class="Pname">${p.name}</p>
         <p class="Pdesc">${p.desc}</p>
-        <p class="type">Type : <span class="typeString">${getProjectType(p.type)}</span></p>
+        <p class="type">Type: <span class="typeString">${getProjectType(p.type)}</span></p>
         `
         info.appendChild(getProjectsTechs(p.techs))
         card.appendChild(info);
