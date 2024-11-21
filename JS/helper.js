@@ -27,7 +27,7 @@ export async function setInfo() {
             personalInfo[1].textContent = data.personal_information.address;
             personalInfo[2].textContent = data.personal_information.citizenship;
             personalInfo[3].textContent = data.personal_information.date_of_birth;
-            personalInfo[4].textContent = data.personal_information.recruitment_state;
+            personalInfo[4].textContent = data.personal_information.military_service;
             phoneNum.textContent = `${data.phone_num}`;
             mail.textContent = `${data.email}`;
             copyRight.textContent = ` ${date.getFullYear()}`;
@@ -487,8 +487,9 @@ export function closePopup() {
 
 export function isCurrentTimeBetween(startDate, endDate) {
     const currentTime = new Date();
-    const startDateTime = new Date(currentTime.getFullYear() - 1, startDate.getMonth(), startDate.getDate(), startDate.getHours(), startDate.getMinutes(), startDate.getSeconds());
-    const endDateTime = new Date(currentTime.getFullYear(), endDate.getMonth(), endDate.getDate(), endDate.getHours(), endDate.getMinutes(), endDate.getSeconds());
+    const startDateTime = new Date(currentTime.getFullYear(), startDate.getMonth(), startDate.getDate(), startDate.getHours(), startDate.getMinutes(), startDate.getSeconds());
+    const endDateTime = new Date(currentTime.getFullYear() + 1, endDate.getMonth(), endDate.getDate(), endDate.getHours(), endDate.getMinutes(), endDate.getSeconds());
+    console.log(endDateTime);
     return currentTime >= startDateTime && currentTime <= endDateTime;
 }
 
