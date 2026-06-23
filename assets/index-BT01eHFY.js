@@ -257,7 +257,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 \r
             hover:text-secondary\r
             hover:bg-white/5\r
-          `,children:e?(0,U.jsx)(ue,{sx:{fontSize:30}}):(0,U.jsx)(ye,{sx:{fontSize:30}})})}function Wp(){let e=(0,j.useRef)(null),{registerZone:t,unregisterZone:n}=Op();(0,j.useEffect)(()=>(t(e.current),()=>n(e.current)),[t,n]);let[r,i]=(0,j.useState)(!1),a=[{label:Me(`aboutMe`),href:`/#about`},{label:Me(`education`),href:`/#education-skills`},{label:Me(`projects`),href:`#projects`},{label:Me(`contact`),href:`#contact`}];return(0,U.jsxs)(`header`,{ref:e,dir:wd(),className:`\r
+          `,children:e?(0,U.jsx)(ue,{sx:{fontSize:30}}):(0,U.jsx)(ye,{sx:{fontSize:30}})})}function Wp(){let e=(0,j.useRef)(null),{registerZone:t,unregisterZone:n}=Op();(0,j.useEffect)(()=>(t(e.current),()=>n(e.current)),[t,n]);let[r,i]=(0,j.useState)(!1),a=[{label:Me(`aboutMe`),href:`/Portfolio_V2_Test/#about`},{label:Me(`education`),href:`/Portfolio_V2_Test/#education-skills`},{label:Me(`projects`),href:`#projects`},{label:Me(`contact`),href:`#contact`}];return(0,U.jsxs)(`header`,{ref:e,dir:wd(),className:`\r
         sticky top-0 z-50\r
         backdrop-blur-xl\r
         bg-mobile-navbar/90\r
